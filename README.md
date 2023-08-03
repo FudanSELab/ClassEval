@@ -13,21 +13,23 @@ For 412 methods, these have been constructed with diverse dependencies, includin
 
 ## Benchmark Format
 
-ClassEval has been meticulously structured and saved in the JSON format, accessible at [ClassEval Data](https://github.com/FudanSELab/ClassEval/blob/master/data/ClassEval_data.json). The specific class-level data fields for each task are delineated as follows:"
+ClassEval has been meticulously structured and saved in the JSON format, accessible at [ClassEval Data](https://github.com/FudanSELab/ClassEval/blob/master/data/ClassEval_data.json). The specific data fields for each task are delineated as follows:"
 
 * task_id: the unique identifier for each task.
 
-* skeleton: the class skeleton, including all input descriptions in our coding tasks. 
+* skeleton: the class skeleton, including all input descriptions in our class-level coding tasks. 
 
 * test: all test cases for the whole class.
 
 * solution_code: the ground-truth class-level code for each task.
 
+Moreover, we have extracted more fine-grained class-level information from the class skeleton, including:
+
 * import_statement: the import statements for each task.
 
-* class_description: a concise description of the purpose and functionality of the class.
-
 * class_name: the name of the class.
+
+* class_description: a concise description of the purpose and functionality of the class.
 
 * class_constructor: the constructor of the class.
 
@@ -37,22 +39,13 @@ In addition, to facilitate the assessment and generation of method-level code, w
 
 * method_name: the method signature.
 
-* method_description: the method contract design, including all input descriptions in the method.
+* method_input: the method contract design, including all input descriptions in the method.
 
 * test_code: the test cases for the method.
 
 * solution_code: the ground-truth method-level code.
 
-* functional_description: a concise description of the purpose and functionality of the method.
-
-* param_description: the description of the input parameters.
-
-* return_description: the description of the return value.
-
-* input_and_output: the example of input and output.
-
 * dependencies: the dependency information of the method.
-
 
 ## Generation Strategies
 
