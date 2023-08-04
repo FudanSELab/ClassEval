@@ -31,7 +31,7 @@ More fine-grained class-level information from the class skeleton, including:
 
 * class_description: a concise description of the purpose and functionality of the class.
 
-* class_constructor: the constructor of the class.
+* class_constructor: the whole constructor of the class.
 
 * fields: the fields defined in the class_constructor.
 
