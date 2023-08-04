@@ -1,7 +1,7 @@
 # ClassEval: Manually-Crafted Benchmark on Class-level Code Generation
 
-ClassEval is the first class-level code generation benchmark described in the paper "ClassEval: A Manually-Crafted Benchmark
-for Evaluating LLMs on Class-level Code Generation". 
+ClassEval is the first class-level code generation benchmark described in the paper ["ClassEval: A Manually-Crafted Benchmark
+for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.01861). 
 
 ## Benchmark Dataset
 
@@ -13,7 +13,7 @@ For 412 methods, these have been constructed with diverse dependencies, includin
 
 ## Benchmark Format
 
-ClassEval has been meticulously structured and saved in the JSON format, accessible at [ClassEval Data](https://github.com/FudanSELab/ClassEval/blob/master/data/ClassEval_data.json). The specific data fields for each task are delineated as follows:"
+ClassEval has been meticulously structured and saved in the JSON format, accessible at [ClassEval Data](https://github.com/FudanSELab/ClassEval/blob/master/data/ClassEval_data.json). The specific data fields for each task are delineated as follows:
 
 * task_id: the unique identifier for each task.
 
@@ -23,7 +23,7 @@ ClassEval has been meticulously structured and saved in the JSON format, accessi
 
 * solution_code: the ground-truth class-level code for each task.
 
-Moreover, we have extracted more fine-grained class-level information from the class skeleton, including:
+More fine-grained class-level information from the class skeleton, including:
 
 * import_statement: the import statements for each task.
 
@@ -35,7 +35,7 @@ Moreover, we have extracted more fine-grained class-level information from the c
 
 * fields: the fields defined in the class_constructor.
 
-In addition, to facilitate the assessment and generation of method-level code, we also provide detailed information for each method in the "methods_info" field, including:
+Detailed information for each method in the "methods_info" field, including:
 
 * method_name: the method signature.
 
@@ -49,7 +49,7 @@ In addition, to facilitate the assessment and generation of method-level code, w
 
 ## Generation Strategies
 
-For class-level code generation tasks, we devise three distinct generation strategies as follows:
+We devise three distinct generation strategies for evaluating LLMs on class-level code generation:
 
 **Holistic Generation**: the model is asked to generate the entire class all at once with the class skeleton as inputs. 
 
