@@ -59,3 +59,6 @@ We devise three distinct generation strategies for evaluating LLMs on class-leve
 
 The holistic generation strategy evaluates the model ability of handling long and complicated coding tasks all at once, while the incremental and compositional generation strategies focus on step-by-step class completion. The incremental strategy simulates progressive software development, where developers incrementally implement current methods based on existing ones. In constrast, the compositional strategy simulates real-world programming scenarios, where developers implement current methods based on other available method signatures.
 
+## Evaluation
+we will publish the comprehensive evaluation code and experimental results in the next few days.
+
