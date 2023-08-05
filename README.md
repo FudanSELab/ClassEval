@@ -62,3 +62,21 @@ The holistic generation strategy evaluates the model ability of handling long an
 ## Evaluation
 We will publish the comprehensive evaluation code and experimental results in the next few days.
 
+# License
+
+This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/main/LICENSE) license. But the data is distributes through [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
+
+# Citation
+
+```
+@misc{du2023classeval,
+      title={ClassEval: A Manually-Crafted Benchmark for Evaluating LLMs on Class-level Code Generation}, 
+      author={Xueying Du and Mingwei Liu and Kaixin Wang and Hanlin Wang and Junwei Liu and Yixuan Chen and Jiayi Feng and Chaofeng Sha and Xin Peng and Yiling Lou},
+      year={2023},
+      eprint={2308.01861},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
+
