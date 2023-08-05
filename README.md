@@ -64,7 +64,7 @@ We will publish the comprehensive evaluation code and experimental results in th
 
 # License
 
-This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/main/LICENSE) license. But the data is distributes through [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
+This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/master/LICENSE) license. But the data is distributes through [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
 
 # Citation
 
