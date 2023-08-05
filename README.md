@@ -1,7 +1,7 @@
 # ClassEval: Manually-Crafted Benchmark on Class-level Code Generation
 
-ClassEval is the first class-level code generation benchmark described in the paper "ClassEval: A Manually-Crafted Benchmark
-for Evaluating LLMs on Class-level Code Generation". 
+ClassEval is the first class-level code generation benchmark described in the paper ["ClassEval: A Manually-Crafted Benchmark
+for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.01861). 
 
 ## Benchmark Dataset
 
@@ -9,11 +9,11 @@ We manually build ClassEval of 100 class-level Python coding tasks, consists of 
 
 For 100 class-level tasks, diversity is maintained by encompassing these tasks over a wide spectrum of topics， including *Management Systems*, *Data Formatting*, *Mathematical Operations*, *Game Development*, *File Handing*, *Database Operations* and *Natural Language Processing*.
 
-For 412 methods, these have been constructed with diverse dependencies, including (i) *Library Dependency*, where the methods rely on specific external libraries; (ii) *Field Dependency*, in which the methods are contingent on class instance variables, or fields; (iii) *Method Dependency*, where the methods are dependent on other methods within the same class; and (iv) *Standalone*, wherein the methods operate independently without reliance on fields, other methods, or external libraries. 
+For 412 methods, they have been constructed with diverse dependencies, including (i) *Library Dependency*, where the methods rely on specific external libraries; (ii) *Field Dependency*, in which the methods are contingent on class instance variables, or fields; (iii) *Method Dependency*, where the methods are dependent on other methods within the same class; and (iv) *Standalone*, wherein the methods operate independently without reliance on fields, other methods, or external libraries. 
 
 ## Benchmark Format
 
-ClassEval has been meticulously structured and saved in the JSON format, accessible at [ClassEval Data](https://github.com/FudanSELab/ClassEval/blob/master/data/ClassEval_data.json). The specific data fields for each task are delineated as follows:"
+ClassEval has been meticulously structured and saved in the JSON format, accessible at [ClassEval Data](https://github.com/FudanSELab/ClassEval/blob/master/data/ClassEval_data.json). The specific data fields for each task are delineated as follows:
 
 * task_id: the unique identifier for each task.
 
@@ -23,7 +23,7 @@ ClassEval has been meticulously structured and saved in the JSON format, accessi
 
 * solution_code: the ground-truth class-level code for each task.
 
-Moreover, we have extracted more fine-grained class-level information from the class skeleton, including:
+More fine-grained class-level information from the class skeleton, including:
 
 * import_statement: the import statements for each task.
 
@@ -31,11 +31,11 @@ Moreover, we have extracted more fine-grained class-level information from the c
 
 * class_description: a concise description of the purpose and functionality of the class.
 
-* class_constructor: the constructor of the class.
+* class_constructor: the whole constructor of the class.
 
 * fields: the fields defined in the class_constructor.
 
-In addition, to facilitate the assessment and generation of method-level code, we also provide detailed information for each method in the "methods_info" field, including:
+Detailed information for each method in the "methods_info" field, including:
 
 * method_name: the method signature.
 
@@ -49,7 +49,7 @@ In addition, to facilitate the assessment and generation of method-level code, w
 
 ## Generation Strategies
 
-For class-level code generation tasks, we devise three distinct generation strategies as follows:
+We devise three distinct generation strategies for evaluating LLMs on class-level code generation:
 
 **Holistic Generation**: the model is asked to generate the entire class all at once with the class skeleton as inputs. 
 
@@ -58,4 +58,25 @@ For class-level code generation tasks, we devise three distinct generation strat
 **Compositional Generation**: the model is asked to generate the class in a method-by-method manner. Each iteration is independent, without considering the other generated methods. All the generated methods are assembled to form the class lastly.
 
 The holistic generation strategy evaluates the model ability of handling long and complicated coding tasks all at once, while the incremental and compositional generation strategies focus on step-by-step class completion. The incremental strategy simulates progressive software development, where developers incrementally implement current methods based on existing ones. In constrast, the compositional strategy simulates real-world programming scenarios, where developers implement current methods based on other available method signatures.
+
+## Evaluation
+We will publish the comprehensive evaluation code and experimental results in the next few days.
+
+# License
+
+This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/master/LICENSE) license. But the data is distributes through [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
+
+# Citation
+
+```
+@misc{du2023classeval,
+      title={ClassEval: A Manually-Crafted Benchmark for Evaluating LLMs on Class-level Code Generation}, 
+      author={Xueying Du and Mingwei Liu and Kaixin Wang and Hanlin Wang and Junwei Liu and Yixuan Chen and Jiayi Feng and Chaofeng Sha and Xin Peng and Yiling Lou},
+      year={2023},
+      eprint={2308.01861},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
 
