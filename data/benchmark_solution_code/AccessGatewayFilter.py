@@ -78,7 +78,6 @@ class AccessGatewayFilter:
                 self.set_current_user_info_and_log(user)
                 return True
         except:
-            logging.error("用户Token异常", exc_info=True)
             return False
 
     def is_start_with(self, request_uri):
