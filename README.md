@@ -47,6 +47,8 @@ Detailed information for each method in the "methods_info" field, including:
 
 * dependencies: the dependency information of the method.
 
+
+
 ## Generation Strategies
 
 We devise three distinct generation strategies for evaluating LLMs on class-level code generation:
@@ -61,6 +63,8 @@ The holistic generation strategy evaluates the model ability of handling long an
 
 ## Evaluation
 We will publish the comprehensive evaluation code and experimental results in the next few days.
+
+## Results
 
 # License
 
