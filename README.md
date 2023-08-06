@@ -49,7 +49,7 @@ Detailed information for each method in the "methods_info" field, including:
 
 The comparison of the inputs for the ClassEval, HumanEval, and MBPP benchmarks is illustrated in the following figures:
 
-<img src="data\images\classeval example.png" alt="other benchmark example" style="zoom: 26%;" />
+<img src="data\images\classeval example.png" alt="other benchmark example" style="zoom: 10%;" />
 
 <img src="data\images\other benchmark example.png" alt="other benchmark example" style="zoom: 28%;" />
 
