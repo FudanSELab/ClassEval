@@ -3,6 +3,7 @@
 
 import math
 class AreaCalculator:
+
     def __init__(self, radius):
         """
         Initialize the radius for shapes.
@@ -63,6 +64,7 @@ import math
 
 
 class AreaCalculator:
+
     def __init__(self, radius):
         self.radius = radius
 
