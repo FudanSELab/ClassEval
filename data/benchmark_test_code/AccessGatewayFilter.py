@@ -1,6 +1,5 @@
 import unittest
 
-
 class AccessGatewayFilterTestFilter(unittest.TestCase):
     def test_filter_1(self):
         agf = AccessGatewayFilter()

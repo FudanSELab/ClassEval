@@ -59,7 +59,7 @@ class ArgumentParser:
         {'arg1': 'int'}
         """
 
-    def _convert_type(self, arg,value):
+    def _convert_type(self, arg, value):
         """
         Try to convert the type of input value by searching in self.types.
         :param value: str, the input value in command line

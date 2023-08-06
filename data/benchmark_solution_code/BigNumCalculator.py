@@ -63,9 +63,7 @@ class BigNumCalculator:
         return ''.join(result)
 
     @staticmethod
-    def subtract(num1_orig, num2_orig):
-        num1 = num1_orig
-        num2 = num2_orig
+    def subtract(num1, num2):
 
         if len(num1) < len(num2):
             num1, num2 = num2, num1

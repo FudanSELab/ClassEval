@@ -69,7 +69,7 @@ class CalendarUtil:
 
         """
 
-    def get_upcoming_events(self, date, n):
+    def get_upcoming_events(self, num_events):
         """
         Get the next n upcoming events from a given date.
         :param date: The date to get upcoming events from,datetime.
