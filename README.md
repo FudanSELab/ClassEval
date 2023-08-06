@@ -47,7 +47,15 @@ Detailed information for each method in the "methods_info" field, including:
 
 * dependencies: the dependency information of the method.
 
+The comparison of the inputs for the ClassEval, HumanEval, and MBPP benchmarks is illustrated in the following figures:
 
+<img src="data\images\classeval example.png" alt="other benchmark example" style="zoom: 26%;" />
+
+<img src="data\images\other benchmark example.png" alt="other benchmark example" style="zoom: 28%;" />
+
+The comparison of test case examples from the ClassEval, HumanEval, and MBPP datasets is depicted in the following figure:
+
+![](data/images/test example.png)
 
 ## Generation Strategies
 
@@ -62,9 +70,37 @@ We devise three distinct generation strategies for evaluating LLMs on class-leve
 The holistic generation strategy evaluates the model ability of handling long and complicated coding tasks all at once, while the incremental and compositional generation strategies focus on step-by-step class completion. The incremental strategy simulates progressive software development, where developers incrementally implement current methods based on existing ones. In constrast, the compositional strategy simulates real-world programming scenarios, where developers implement current methods based on other available method signatures.
 
 ## Evaluation
-We will publish the comprehensive evaluation code and experimental results in the next few days.
+
+ we consider two sampling methods for code generation: (i) nucleus sampling, where five solution code samples are randomly generated for each task with a temperature of 0.2 and default top_p, and (ii) greedy sampling, where only one single solution code sample is generated for each task using greedy decoding, i.e., setting the “do_sample” hyperparameter to false (temperature of 0). Our experiments are run on a computational infrastructure comprising eight A800-80G GPUs
 
 ## Results
+
+### Overall Correctness
+
+The following figure shows the class-level and method-level Pass@1 with greedy sampling of studied LLMs on ClassEval and HumanEval:
+
+<img src="data\images\C_pass1_bar.png" alt="C_pass1_bar" style="zoom: 29%;" />
+
+The following table presents the class-level and method-level Pass@k
+with nucleus sampling on ClassEval:
+
+<img src="data\images\pass@k.png" alt="pass@k" style="zoom: 50%;" />
+
+Notably, we only present the best class-level Pass@1 (and corresponding method-level Pass@1) for each model among the three generation strategies.
+
+### Generation Strategies
+
+The following figures compare the class-level Pass@5 and method-level Pass@5
+of three different generation strategies (i.e., holistic, incremental,
+and compositional generation)
+
+<img src="data\images\C_pass5.png" alt="pass@k" style="zoom: 45%;" />
+
+<img src="data\images\M_pass5.png" alt="pass@k" style="zoom: 45%;" />
+
+## Usage
+
+We will publish the comprehensive evaluation code and detailed usage in the next few days.
 
 # License
 
