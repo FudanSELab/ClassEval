@@ -48,11 +48,21 @@ if __name__ == '__main__':
             ori_data = json.load(file)
 
         if args.greedy == 1:
-            ori_data["pass_1_greedy"][args.source_file_name] = result["pass_1_greedy"][args.source_file_name]
+            if "pass_1_greedy" in ori_data:
+                ori_data["pass_1_greedy"][args.source_file_name] = result["pass_1_greedy"][args.source_file_name]
+            else:
+                ori_data["pass_1_greedy"] = result["pass_1_greedy"]
         else:
-            ori_data["pass_1"][args.source_file_name] = result["pass_1"][args.source_file_name]
-            ori_data["pass_3"][args.source_file_name] = result["pass_3"][args.source_file_name]
-            ori_data["pass_5"][args.source_file_name] = result["pass_5"][args.source_file_name]
-    
+            if "pass_1" in ori_data:
+                ori_data["pass_1"][args.source_file_name] = result["pass_1"][args.source_file_name]
+                ori_data["pass_3"][args.source_file_name] = result["pass_3"][args.source_file_name]
+                ori_data["pass_5"][args.source_file_name] = result["pass_5"][args.source_file_name]
+            else:
+                ori_data["pass_1"] = result["pass_1"]
+                ori_data["pass_3"] = result["pass_3"]
+                ori_data["pass_5"] = result["pass_5"]
+    else:
+        ori_data = result
+
     with open(save_path, 'w') as f:
         json.dump(ori_data, f, indent=4, sort_keys=True)
