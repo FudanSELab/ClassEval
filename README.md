@@ -16,7 +16,7 @@ for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.0
 
 We manually build ClassEval of 100 class-level Python coding tasks, consists of 100 classes and 412 methods, and average 33.1 test cases per class.
 
-For 100 class-level tasks, diversity is maintained by encompassing these tasks over a wide spectrum of topics， including *Management Systems*, *Data Formatting*, *Mathematical Operations*, *Game Development*, *File Handing*, *Database Operations* and *Natural Language Processing*.
+For 100 class-level tasks, diversity is maintained by encompassing these tasks over a wide spectrum of topics, including *Management Systems*, *Data Formatting*, *Mathematical Operations*, *Game Development*, *File Handing*, *Database Operations* and *Natural Language Processing*.
 
 For 412 methods, they have been constructed with diverse dependencies, including (i) *Library Dependency*, where the methods rely on specific external libraries; (ii) *Field Dependency*, in which the methods are contingent on class instance variables, or fields; (iii) *Method Dependency*, where the methods are dependent on other methods within the same class; and (iv) *Standalone*, wherein the methods operate independently without reliance on fields, other methods, or external libraries. 
 
