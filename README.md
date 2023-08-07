@@ -49,13 +49,13 @@ Detailed information for each method in the "methods_info" field, including:
 
 The comparison of the inputs for the ClassEval, HumanEval, and MBPP benchmarks is illustrated in the following figures:
 
-<img src="data\images\classeval example.png" alt="other benchmark example" style="zoom: 25%;" />
+<img src="output\images\classeval example.png" alt="other benchmark example" style="zoom: 25%;" />
 
-<img src="data\images\other benchmark example.png" alt="other benchmark example" style="zoom: 28%;" />
+<img src="output\images\other benchmark example.png" alt="other benchmark example" style="zoom: 28%;" />
 
 The comparison of test case examples from the ClassEval, HumanEval, and MBPP datasets is depicted in the following figure:
 
-![](data/images/test example.png)
+![](output/images/test example.png)
 
 ## Generation Strategies
 
@@ -79,12 +79,12 @@ The holistic generation strategy evaluates the model ability of handling long an
 
 The following figure shows the class-level and method-level Pass@1 with greedy sampling of studied LLMs on ClassEval and HumanEval:
 
-<img src="data\images\C_pass1_bar.png" alt="C_pass1_bar" style="zoom: 29%;" />
+<img src="output\images\C_pass1_bar.png" alt="C_pass1_bar" style="zoom: 29%;" />
 
 The following table presents the class-level and method-level Pass@k
 with nucleus sampling on ClassEval:
 
-<img src="data\images\pass@k.png" alt="pass@k" style="zoom: 50%;" />
+<img src="output\images\pass@k.png" alt="pass@k" style="zoom: 50%;" />
 
 Notably, we only present the best class-level Pass@1 (and corresponding method-level Pass@1) for each model among the three generation strategies.
 
@@ -94,9 +94,9 @@ The following figures compare the class-level Pass@5 and method-level Pass@5
 of three different generation strategies (i.e., holistic, incremental,
 and compositional generation)
 
-<img src="data\images\C_pass5.png" alt="pass@k" style="zoom: 45%;" />
+<img src="output\images\C_pass5.png" alt="pass@k" style="zoom: 45%;" />
 
-<img src="data\images\M_pass5.png" alt="pass@k" style="zoom: 45%;" />
+<img src="output\images\M_pass5.png" alt="pass@k" style="zoom: 45%;" />
 
 ## Usage
 
