@@ -7,7 +7,7 @@ import json
 import re
 import os
 from scipy.special import comb
-from classeval_evaluation.path_util import PathUtil
+from path_util import PathUtil
 
 class AutoTest:
 
@@ -65,6 +65,13 @@ class AutoTest:
                     return code
                 except:
                     continue
+            code_list = text.split("\n")
+            for code_line in code_list:
+                if code_line.strip().startswith('class'):
+                    break
+                elif not code_line.strip().startswith('import') or not code_line.strip().startswith('from'):
+                    code_list.remove(code_line)
+            text = '\n'.join(code_list)
             return text
 
     def gen_code_list(self, file_path):
@@ -82,15 +89,16 @@ class AutoTest:
         return code_list
 
     @func_set_timeout(5)
-    def run_unit_test(self, test_code, test_class):
+    def run_unit_test(self, test_code, test_class, model_name):
         module = importlib.import_module(test_code)
-        with open(PathUtil().test_result_data("log_data", 'log'), 'a', encoding='utf-8') as f:
+        log_path = PathUtil().log_output_data(model_name + "_log_data", 'log')
+        with open(log_path, 'a', encoding='utf-8') as f:
             test_suite = unittest.TestLoader().loadTestsFromTestCase(getattr(module, test_class))
             test_result = unittest.TextTestRunner(stream = f).run(test_suite)
 
         return test_result
 
-    def test(self, code_num, test_code_name, test_classes):
+    def test(self, code_num, test_code_name, test_classes, model_name):
 
         result = {}
 
@@ -102,7 +110,7 @@ class AutoTest:
             for test_class in test_classes:
                 res_item = {}
                 try:
-                    res = self.run_unit_test(test_code, test_class)
+                    res = self.run_unit_test(test_code, test_class, model_name)
                     res_item['errors'] = len(res.errors)
                     res_item['failures'] = len(res.failures)
                     res_item['testsRun'] = res.testsRun
@@ -138,7 +146,7 @@ class AutoTest:
             task_code_list = code_list[task_id]
             try:
                 result = self.test(len(task_code_list), task_id,
-                                   self.eval_data[task_id]['test_classes'])
+                                   self.eval_data[task_id]['test_classes'], model_name)
                 result_dict[task_id] = result
             except:
                 continue

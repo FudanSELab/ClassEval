@@ -1,7 +1,7 @@
 import argparse
 import json
 from test_pipeline import AutoTest
-from classeval_evaluation.path_util import PathUtil
+from path_util import PathUtil
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
