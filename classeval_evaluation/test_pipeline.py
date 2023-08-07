@@ -7,7 +7,7 @@ import json
 import re
 import os
 from scipy.special import comb
-from classeval_evaluation.path_util import PathUtil
+from utils.path_util import PathUtil
 
 class AutoTest:
 
@@ -268,9 +268,11 @@ class AutoTest:
 
     def tear_down(self):
         file_list = os.listdir()
+        reserved_files = ["evaluation.py", "path_util.py", "test_pipeline.py"]
         for item in file_list:
-            if "test_pipeline" not in item and "_pycache__" not in item:
+            if item not in reserved_files and "test_pipeline" not in item and "_pycache__" not in item:
                 if os.path.isdir(item):
                     shutil.rmtree(item)
                 else:
                     os.remove(item)
+
