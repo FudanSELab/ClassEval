@@ -3,6 +3,15 @@
 ClassEval is the first class-level code generation benchmark described in the paper ["ClassEval: A Manually-Crafted Benchmark
 for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.01861). 
 
+## Updates
+- 2023-08-05: Initial Benchmark Release
+
+### Plan
+- Huggingface Support
+- Usage Code
+- Documentation
+- ...
+
 ## Benchmark Dataset
 
 We manually build ClassEval of 100 class-level Python coding tasks, consists of 100 classes and 412 methods, and average 33.1 test cases per class.
