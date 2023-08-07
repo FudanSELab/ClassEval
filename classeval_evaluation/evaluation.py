@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 from test_pipeline import AutoTest
 from path_util import PathUtil
 
@@ -41,5 +42,17 @@ if __name__ == '__main__':
         result["pass_3"] = AutoT.cal_metrics_pass_at_k(model_list, 3, 5)
         result["pass_5"] = AutoT.cal_metrics_pass_at_k(model_list, 5, 5)
     save_path = PathUtil().test_result_data("pass_at_k_result", 'json')
+
+    if os.path.exists(save_path):
+        with open(save_path, encoding='utf-8') as file:
+            ori_data = json.load(file)
+
+        if args.greedy == 1:
+            ori_data["pass_1_greedy"][args.source_file_name] = result["pass_1_greedy"][args.source_file_name]
+        else:
+            ori_data["pass_1"][args.source_file_name] = result["pass_1"][args.source_file_name]
+            ori_data["pass_3"][args.source_file_name] = result["pass_3"][args.source_file_name]
+            ori_data["pass_5"][args.source_file_name] = result["pass_5"][args.source_file_name]
+    
     with open(save_path, 'w') as f:
-        json.dump(result, f, indent=4, sort_keys=True)
+        json.dump(ori_data, f, indent=4, sort_keys=True)
