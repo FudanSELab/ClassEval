@@ -7,7 +7,7 @@ import json
 import re
 import os
 from scipy.special import comb
-from utils.path_util import PathUtil
+from classeval_evaluation.path_util import PathUtil
 
 class AutoTest:
 
