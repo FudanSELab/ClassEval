@@ -11,3 +11,4 @@ jsonlines~=3.1.0
 levenshtein~=0.20.8
 scipy~=1.7.3
 openpyxl~=3.0.9
+func_timeout
