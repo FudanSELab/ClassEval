@@ -1,0 +1,802 @@
+{
+    "pass_1": {
+        "ChatGLM_C": {
+            "class_partial_success": 0.024000000000000004,
+            "class_success": 0.013999999999999999,
+            "fun_partial_success": 0.16487025948103798,
+            "fun_success": 0.08183632734530934
+        },
+        "ChatGLM_H": {
+            "class_partial_success": 0.012,
+            "class_success": 0.01,
+            "fun_partial_success": 0.13373253493013973,
+            "fun_success": 0.05828343313373253
+        },
+        "ChatGLM_I": {
+            "class_partial_success": 0.02,
+            "class_success": 0.012000000000000002,
+            "fun_partial_success": 0.17485029940119753,
+            "fun_success": 0.0770459081836327
+        },
+        "CodeGeeX_C": {
+            "class_partial_success": 0.07,
+            "class_success": 0.038,
+            "fun_partial_success": 0.33333333333333337,
+            "fun_success": 0.20678642714570855
+        },
+        "CodeGeeX_H": {
+            "class_partial_success": 0.01,
+            "class_success": 0.01,
+            "fun_partial_success": 0.0215568862275449,
+            "fun_success": 0.011177644710578843
+        },
+        "CodeGeeX_I": {
+            "class_partial_success": 0.09600000000000002,
+            "class_success": 0.07200000000000001,
+            "fun_partial_success": 0.32415169660678644,
+            "fun_success": 0.2119760479041915
+        },
+        "GPT-3.5_C": {
+            "class_partial_success": 0.304,
+            "class_success": 0.182,
+            "fun_partial_success": 0.6335329341317367,
+            "fun_success": 0.5117764471057884
+        },
+        "GPT-3.5_H": {
+            "class_partial_success": 0.40199999999999997,
+            "class_success": 0.29600000000000004,
+            "fun_partial_success": 0.5848303393213578,
+            "fun_success": 0.5041916167664672
+        },
+        "GPT-3.5_I": {
+            "class_partial_success": 0.352,
+            "class_success": 0.256,
+            "fun_partial_success": 0.6471057884231537,
+            "fun_success": 0.5289421157684632
+        },
+        "GPT-4_C": {
+            "class_partial_success": 0.446,
+            "class_success": 0.296,
+            "fun_partial_success": 0.6826347305389224,
+            "fun_success": 0.5772455089820359
+        },
+        "GPT-4_H": {
+            "class_partial_success": 0.508,
+            "class_success": 0.376,
+            "fun_partial_success": 0.728542914171657,
+            "fun_success": 0.6283433133732539
+        },
+        "GPT-4_I": {
+            "class_partial_success": 0.36199999999999993,
+            "class_success": 0.262,
+            "fun_partial_success": 0.6175648702594814,
+            "fun_success": 0.522554890219561
+        },
+        "Incoder_C": {
+            "class_partial_success": 0.07200000000000001,
+            "class_success": 0.034,
+            "fun_partial_success": 0.34091816367265476,
+            "fun_success": 0.20638722554890213
+        },
+        "Incoder_H": {
+            "class_partial_success": 0.048,
+            "class_success": 0.026000000000000002,
+            "fun_partial_success": 0.2295409181636726,
+            "fun_success": 0.12095808383233535
+        },
+        "Incoder_I": {
+            "class_partial_success": 0.08800000000000001,
+            "class_success": 0.062,
+            "fun_partial_success": 0.34211576846307357,
+            "fun_success": 0.2107784431137725
+        },
+        "Instruct-CodeGen_C": {
+            "class_partial_success": 0.10400000000000001,
+            "class_success": 0.05800000000000001,
+            "fun_partial_success": 0.31297405189620753,
+            "fun_success": 0.20199600798403197
+        },
+        "Instruct-CodeGen_H": {
+            "class_partial_success": 0.114,
+            "class_success": 0.074,
+            "fun_partial_success": 0.2570858283433136,
+            "fun_success": 0.17085828343313375
+        },
+        "Instruct-CodeGen_I": {
+            "class_partial_success": 0.122,
+            "class_success": 0.08199999999999999,
+            "fun_partial_success": 0.3493013972055886,
+            "fun_success": 0.24870259481037923
+        },
+        "Instruct-StarCoder_C": {
+            "class_partial_success": 0.146,
+            "class_success": 0.08999999999999998,
+            "fun_partial_success": 0.3145708582834328,
+            "fun_success": 0.22754491017964068
+        },
+        "Instruct-StarCoder_H": {
+            "class_partial_success": 0.14,
+            "class_success": 0.10200000000000001,
+            "fun_partial_success": 0.31696606786427156,
+            "fun_success": 0.23113772455089826
+        },
+        "Instruct-StarCoder_I": {
+            "class_partial_success": 0.136,
+            "class_success": 0.084,
+            "fun_partial_success": 0.2654690618762476,
+            "fun_success": 0.20439121756487041
+        },
+        "PolyCoder_C": {
+            "class_partial_success": 0.054000000000000006,
+            "class_success": 0.026000000000000002,
+            "fun_partial_success": 0.2395209580838323,
+            "fun_success": 0.10219560878243512
+        },
+        "PolyCoder_H": {
+            "class_partial_success": 0.002,
+            "class_success": 0.0,
+            "fun_partial_success": 0.007185628742514969,
+            "fun_success": 0.0007984031936127745
+        },
+        "PolyCoder_I": {
+            "class_partial_success": 0.024000000000000004,
+            "class_success": 0.013999999999999999,
+            "fun_partial_success": 0.2538922155688625,
+            "fun_success": 0.13173652694610782
+        },
+        "SantaCoder_C": {
+            "class_partial_success": 0.084,
+            "class_success": 0.032,
+            "fun_partial_success": 0.3708582834331338,
+            "fun_success": 0.21037924151696613
+        },
+        "SantaCoder_H": {
+            "class_partial_success": 0.02,
+            "class_success": 0.01,
+            "fun_partial_success": 0.0882235528942116,
+            "fun_success": 0.029540918163672655
+        },
+        "SantaCoder_I": {
+            "class_partial_success": 0.11800000000000001,
+            "class_success": 0.086,
+            "fun_partial_success": 0.41796407185628737,
+            "fun_success": 0.2774451097804393
+        },
+        "Vicuna_C": {
+            "class_partial_success": 0.046,
+            "class_success": 0.026000000000000002,
+            "fun_partial_success": 0.2874251497005989,
+            "fun_success": 0.14530938123752496
+        },
+        "Vicuna_H": {
+            "class_partial_success": 0.034,
+            "class_success": 0.013999999999999999,
+            "fun_partial_success": 0.14411177644710588,
+            "fun_success": 0.06866267465069859
+        },
+        "Vicuna_I": {
+            "class_partial_success": 0.04,
+            "class_success": 0.03,
+            "fun_partial_success": 0.20918163672654674,
+            "fun_success": 0.11017964071856291
+        },
+        "WizardCoder_C": {
+            "class_partial_success": 0.18400000000000002,
+            "class_success": 0.12200000000000003,
+            "fun_partial_success": 0.4778443113772459,
+            "fun_success": 0.35209580838323357
+        },
+        "WizardCoder_H": {
+            "class_partial_success": 0.13799999999999998,
+            "class_success": 0.092,
+            "fun_partial_success": 0.2658682634730541,
+            "fun_success": 0.20399201596806413
+        },
+        "WizardCoder_I": {
+            "class_partial_success": 0.074,
+            "class_success": 0.054000000000000006,
+            "fun_partial_success": 0.30219560878243523,
+            "fun_success": 0.2203592814371258
+        }
+    },
+    "pass_1_greedy": {
+        "ChatGLM_C(greedy)": {
+            "class_partial_success": 0.03,
+            "class_success": 0.01,
+            "fun_partial_success": 0.1497005988023952,
+            "fun_success": 0.0658682634730539
+        },
+        "ChatGLM_H(greedy)": {
+            "class_partial_success": 0.03,
+            "class_success": 0.02,
+            "fun_partial_success": 0.15768463073852296,
+            "fun_success": 0.07385229540918163
+        },
+        "ChatGLM_I(greedy)": {
+            "class_partial_success": 0.03,
+            "class_success": 0.02,
+            "fun_partial_success": 0.21357285429141717,
+            "fun_success": 0.09181636726546906
+        },
+        "CodeGeeX_C(greedy)": {
+            "class_partial_success": 0.06,
+            "class_success": 0.03,
+            "fun_partial_success": 0.3313373253493014,
+            "fun_success": 0.2055888223552894
+        },
+        "CodeGeeX_H(greedy)": {
+            "class_partial_success": 0.01,
+            "class_success": 0.01,
+            "fun_partial_success": 0.027944111776447105,
+            "fun_success": 0.013972055888223553
+        },
+        "CodeGeeX_I(greedy)": {
+            "class_partial_success": 0.12,
+            "class_success": 0.09,
+            "fun_partial_success": 0.3273453093812375,
+            "fun_success": 0.2155688622754491
+        },
+        "GPT-3.5_C(greedy)": {
+            "class_partial_success": 0.33,
+            "class_success": 0.19,
+            "fun_partial_success": 0.6467065868263473,
+            "fun_success": 0.5249500998003992
+        },
+        "GPT-3.5_H(greedy)": {
+            "class_partial_success": 0.34,
+            "class_success": 0.26,
+            "fun_partial_success": 0.5508982035928144,
+            "fun_success": 0.4630738522954092
+        },
+        "GPT-3.5_I(greedy)": {
+            "class_partial_success": 0.36,
+            "class_success": 0.27,
+            "fun_partial_success": 0.6427145708582834,
+            "fun_success": 0.5329341317365269
+        },
+        "GPT-4_C(greedy)": {
+            "class_partial_success": 0.46,
+            "class_success": 0.29,
+            "fun_partial_success": 0.6906187624750499,
+            "fun_success": 0.5888223552894212
+        },
+        "GPT-4_H(greedy)": {
+            "class_partial_success": 0.5,
+            "class_success": 0.37,
+            "fun_partial_success": 0.716566866267465,
+            "fun_success": 0.624750499001996
+        },
+        "GPT-4_I(greedy)": {
+            "class_partial_success": 0.38,
+            "class_success": 0.29,
+            "fun_partial_success": 0.5948103792415169,
+            "fun_success": 0.5169660678642715
+        },
+        "Incoder_C(greedy)": {
+            "class_partial_success": 0.08,
+            "class_success": 0.04,
+            "fun_partial_success": 0.34530938123752497,
+            "fun_success": 0.20159680638722555
+        },
+        "Incoder_H(greedy)": {
+            "class_partial_success": 0.05,
+            "class_success": 0.03,
+            "fun_partial_success": 0.2435129740518962,
+            "fun_success": 0.12574850299401197
+        },
+        "Incoder_I(greedy)": {
+            "class_partial_success": 0.07,
+            "class_success": 0.06,
+            "fun_partial_success": 0.35528942115768464,
+            "fun_success": 0.21357285429141717
+        },
+        "Instruct-CodeGen_C(greedy)": {
+            "class_partial_success": 0.14,
+            "class_success": 0.06,
+            "fun_partial_success": 0.3273453093812375,
+            "fun_success": 0.20958083832335328
+        },
+        "Instruct-CodeGen_H(greedy)": {
+            "class_partial_success": 0.11,
+            "class_success": 0.07,
+            "fun_partial_success": 0.24550898203592814,
+            "fun_success": 0.16966067864271456
+        },
+        "Instruct-CodeGen_I(greedy)": {
+            "class_partial_success": 0.1414141414141414,
+            "class_success": 0.1111111111111111,
+            "fun_partial_success": 0.35020242914979755,
+            "fun_success": 0.25101214574898784
+        },
+        "Instruct-StarCoder_C(greedy)": {
+            "class_partial_success": 0.16,
+            "class_success": 0.09,
+            "fun_partial_success": 0.35129740518962077,
+            "fun_success": 0.2554890219560878
+        },
+        "Instruct-StarCoder_H(greedy)": {
+            "class_partial_success": 0.13,
+            "class_success": 0.1,
+            "fun_partial_success": 0.3193612774451098,
+            "fun_success": 0.23353293413173654
+        },
+        "Instruct-StarCoder_I(greedy)": {
+            "class_partial_success": 0.13,
+            "class_success": 0.07,
+            "fun_partial_success": 0.22355289421157684,
+            "fun_success": 0.17365269461077845
+        },
+        "PolyCoder_C(greedy)": {
+            "class_partial_success": 0.05,
+            "class_success": 0.02,
+            "fun_partial_success": 0.26147704590818366,
+            "fun_success": 0.10978043912175649
+        },
+        "PolyCoder_H(greedy)": {
+            "class_partial_success": 0.01,
+            "class_success": 0.01,
+            "fun_partial_success": 0.017964071856287425,
+            "fun_success": 0.017964071856287425
+        },
+        "PolyCoder_I(greedy)": {
+            "class_partial_success": 0.03,
+            "class_success": 0.03,
+            "fun_partial_success": 0.2774451097804391,
+            "fun_success": 0.14570858283433133
+        },
+        "SantaCoder_C(greedy)": {
+            "class_partial_success": 0.07,
+            "class_success": 0.02,
+            "fun_partial_success": 0.3532934131736527,
+            "fun_success": 0.20159680638722555
+        },
+        "SantaCoder_H(greedy)": {
+            "class_partial_success": 0.03,
+            "class_success": 0.02,
+            "fun_partial_success": 0.07984031936127745,
+            "fun_success": 0.029940119760479042
+        },
+        "SantaCoder_I(greedy)": {
+            "class_partial_success": 0.12,
+            "class_success": 0.1,
+            "fun_partial_success": 0.405189620758483,
+            "fun_success": 0.27345309381237526
+        },
+        "Vicuna_C(greedy)": {
+            "class_partial_success": 0.04,
+            "class_success": 0.02,
+            "fun_partial_success": 0.23353293413173654,
+            "fun_success": 0.1217564870259481
+        },
+        "Vicuna_H(greedy)": {
+            "class_partial_success": 0.03,
+            "class_success": 0.02,
+            "fun_partial_success": 0.15568862275449102,
+            "fun_success": 0.07984031936127745
+        },
+        "Vicuna_I(greedy)": {
+            "class_partial_success": 0.04,
+            "class_success": 0.03,
+            "fun_partial_success": 0.22554890219560877,
+            "fun_success": 0.10778443113772455
+        },
+        "WizardCoder_C(greedy)": {
+            "class_partial_success": 0.17,
+            "class_success": 0.11,
+            "fun_partial_success": 0.47904191616766467,
+            "fun_success": 0.35528942115768464
+        },
+        "WizardCoder_H(greedy)": {
+            "class_partial_success": 0.13,
+            "class_success": 0.1,
+            "fun_partial_success": 0.26746506986027946,
+            "fun_success": 0.19760479041916168
+        },
+        "WizardCoder_I(greedy)": {
+            "class_partial_success": 0.09,
+            "class_success": 0.06,
+            "fun_partial_success": 0.313373253493014,
+            "fun_success": 0.25149700598802394
+        }
+    },
+    "pass_3": {
+        "ChatGLM_C": {
+            "class_partial_success": 0.045,
+            "class_success": 0.026000000000000002,
+            "fun_partial_success": 0.22235528942115776,
+            "fun_success": 0.11217564870259479
+        },
+        "ChatGLM_H": {
+            "class_partial_success": 0.025,
+            "class_success": 0.019,
+            "fun_partial_success": 0.16946107784431144,
+            "fun_success": 0.06826347305389222
+        },
+        "ChatGLM_I": {
+            "class_partial_success": 0.04,
+            "class_success": 0.019,
+            "fun_partial_success": 0.25229540918163684,
+            "fun_success": 0.10978043912175649
+        },
+        "CodeGeeX_C": {
+            "class_partial_success": 0.088,
+            "class_success": 0.046,
+            "fun_partial_success": 0.3950099800399201,
+            "fun_success": 0.25209580838323353
+        },
+        "CodeGeeX_H": {
+            "class_partial_success": 0.01,
+            "class_success": 0.01,
+            "fun_partial_success": 0.028742514970059873,
+            "fun_success": 0.013572854291417163
+        },
+        "CodeGeeX_I": {
+            "class_partial_success": 0.129,
+            "class_success": 0.094,
+            "fun_partial_success": 0.38562874251497,
+            "fun_success": 0.27125748502994
+        },
+        "GPT-3.5_C": {
+            "class_partial_success": 0.337,
+            "class_success": 0.213,
+            "fun_partial_success": 0.6682634730538921,
+            "fun_success": 0.5500998003992015
+        },
+        "GPT-3.5_H": {
+            "class_partial_success": 0.477,
+            "class_success": 0.3489999999999999,
+            "fun_partial_success": 0.6758483033932137,
+            "fun_success": 0.5900199600798403
+        },
+        "GPT-3.5_I": {
+            "class_partial_success": 0.4060000000000001,
+            "class_success": 0.302,
+            "fun_partial_success": 0.6932135728542913,
+            "fun_success": 0.5726546906187622
+        },
+        "GPT-4_C": {
+            "class_partial_success": 0.506,
+            "class_success": 0.341,
+            "fun_partial_success": 0.7273453093812374,
+            "fun_success": 0.6229540918163671
+        },
+        "GPT-4_H": {
+            "class_partial_success": 0.575,
+            "class_success": 0.413,
+            "fun_partial_success": 0.7764471057884231,
+            "fun_success": 0.6744510978043912
+        },
+        "GPT-4_I": {
+            "class_partial_success": 0.424,
+            "class_success": 0.307,
+            "fun_partial_success": 0.6726546906187625,
+            "fun_success": 0.5762475049900201
+        },
+        "Incoder_C": {
+            "class_partial_success": 0.094,
+            "class_success": 0.039,
+            "fun_partial_success": 0.4187624750499002,
+            "fun_success": 0.25109780439121765
+        },
+        "Incoder_H": {
+            "class_partial_success": 0.066,
+            "class_success": 0.035,
+            "fun_partial_success": 0.30219560878243507,
+            "fun_success": 0.1658682634730539
+        },
+        "Incoder_I": {
+            "class_partial_success": 0.118,
+            "class_success": 0.076,
+            "fun_partial_success": 0.42015968063872244,
+            "fun_success": 0.2654690618762474
+        },
+        "Instruct-CodeGen_C": {
+            "class_partial_success": 0.14400000000000002,
+            "class_success": 0.07200000000000001,
+            "fun_partial_success": 0.3868263473053891,
+            "fun_success": 0.25688622754491014
+        },
+        "Instruct-CodeGen_H": {
+            "class_partial_success": 0.166,
+            "class_success": 0.09799999999999999,
+            "fun_partial_success": 0.3461077844311377,
+            "fun_success": 0.23772455089820363
+        },
+        "Instruct-CodeGen_I": {
+            "class_partial_success": 0.17200000000000004,
+            "class_success": 0.12299999999999998,
+            "fun_partial_success": 0.4662674650698602,
+            "fun_success": 0.34251497005988024
+        },
+        "Instruct-StarCoder_C": {
+            "class_partial_success": 0.19,
+            "class_success": 0.12399999999999999,
+            "fun_partial_success": 0.39660678642714553,
+            "fun_success": 0.29261477045908163
+        },
+        "Instruct-StarCoder_H": {
+            "class_partial_success": 0.18699999999999994,
+            "class_success": 0.127,
+            "fun_partial_success": 0.3512974051896207,
+            "fun_success": 0.2650698602794411
+        },
+        "Instruct-StarCoder_I": {
+            "class_partial_success": 0.17800000000000002,
+            "class_success": 0.11299999999999999,
+            "fun_partial_success": 0.3443113772455088,
+            "fun_success": 0.26746506986027935
+        },
+        "PolyCoder_C": {
+            "class_partial_success": 0.066,
+            "class_success": 0.03,
+            "fun_partial_success": 0.3209580838323353,
+            "fun_success": 0.13453093812375247
+        },
+        "PolyCoder_H": {
+            "class_partial_success": 0.006,
+            "class_success": 0.0,
+            "fun_partial_success": 0.019760479041916166,
+            "fun_success": 0.0023952095808383233
+        },
+        "PolyCoder_I": {
+            "class_partial_success": 0.038000000000000006,
+            "class_success": 0.022000000000000002,
+            "fun_partial_success": 0.3389221556886228,
+            "fun_success": 0.17504990019960084
+        },
+        "SantaCoder_C": {
+            "class_partial_success": 0.11,
+            "class_success": 0.036000000000000004,
+            "fun_partial_success": 0.4500998003992017,
+            "fun_success": 0.2600798403193612
+        },
+        "SantaCoder_H": {
+            "class_partial_success": 0.032,
+            "class_success": 0.022000000000000002,
+            "fun_partial_success": 0.1251497005988024,
+            "fun_success": 0.04291417165668662
+        },
+        "SantaCoder_I": {
+            "class_partial_success": 0.16599999999999998,
+            "class_success": 0.099,
+            "fun_partial_success": 0.4916167664670658,
+            "fun_success": 0.3295409181636727
+        },
+        "Vicuna_C": {
+            "class_partial_success": 0.064,
+            "class_success": 0.03,
+            "fun_partial_success": 0.3736526946107784,
+            "fun_success": 0.18802395209580833
+        },
+        "Vicuna_H": {
+            "class_partial_success": 0.056999999999999995,
+            "class_success": 0.019,
+            "fun_partial_success": 0.24211576846307362,
+            "fun_success": 0.11536926147704595
+        },
+        "Vicuna_I": {
+            "class_partial_success": 0.057999999999999996,
+            "class_success": 0.036000000000000004,
+            "fun_partial_success": 0.3079840319361276,
+            "fun_success": 0.1578842315369261
+        },
+        "WizardCoder_C": {
+            "class_partial_success": 0.287,
+            "class_success": 0.199,
+            "fun_partial_success": 0.6177644710578842,
+            "fun_success": 0.47065868263473054
+        },
+        "WizardCoder_H": {
+            "class_partial_success": 0.24100000000000005,
+            "class_success": 0.163,
+            "fun_partial_success": 0.460878243512974,
+            "fun_success": 0.3640718562874251
+        },
+        "WizardCoder_I": {
+            "class_partial_success": 0.11199999999999999,
+            "class_success": 0.074,
+            "fun_partial_success": 0.4518962075848301,
+            "fun_success": 0.33253493013972046
+        }
+    },
+    "pass_5": {
+        "ChatGLM_C": {
+            "class_partial_success": 0.05,
+            "class_success": 0.03,
+            "fun_partial_success": 0.24151696606786427,
+            "fun_success": 0.12375249500998003
+        },
+        "ChatGLM_H": {
+            "class_partial_success": 0.03,
+            "class_success": 0.02,
+            "fun_partial_success": 0.18363273453093812,
+            "fun_success": 0.0718562874251497
+        },
+        "ChatGLM_I": {
+            "class_partial_success": 0.05,
+            "class_success": 0.02,
+            "fun_partial_success": 0.281437125748503,
+            "fun_success": 0.11976047904191617
+        },
+        "CodeGeeX_C": {
+            "class_partial_success": 0.1,
+            "class_success": 0.05,
+            "fun_partial_success": 0.41317365269461076,
+            "fun_success": 0.2694610778443114
+        },
+        "CodeGeeX_H": {
+            "class_partial_success": 0.01,
+            "class_success": 0.01,
+            "fun_partial_success": 0.03592814371257485,
+            "fun_success": 0.015968063872255488
+        },
+        "CodeGeeX_I": {
+            "class_partial_success": 0.14,
+            "class_success": 0.1,
+            "fun_partial_success": 0.4091816367265469,
+            "fun_success": 0.2954091816367265
+        },
+        "GPT-3.5_C": {
+            "class_partial_success": 0.35,
+            "class_success": 0.22,
+            "fun_partial_success": 0.6806387225548902,
+            "fun_success": 0.564870259481038
+        },
+        "GPT-3.5_H": {
+            "class_partial_success": 0.49,
+            "class_success": 0.36,
+            "fun_partial_success": 0.7005988023952096,
+            "fun_success": 0.6107784431137725
+        },
+        "GPT-3.5_I": {
+            "class_partial_success": 0.44,
+            "class_success": 0.32,
+            "fun_partial_success": 0.7145708582834331,
+            "fun_success": 0.5968063872255489
+        },
+        "GPT-4_C": {
+            "class_partial_success": 0.53,
+            "class_success": 0.36,
+            "fun_partial_success": 0.7425149700598802,
+            "fun_success": 0.6407185628742516
+        },
+        "GPT-4_H": {
+            "class_partial_success": 0.59,
+            "class_success": 0.42,
+            "fun_partial_success": 0.7864271457085829,
+            "fun_success": 0.6846307385229541
+        },
+        "GPT-4_I": {
+            "class_partial_success": 0.45,
+            "class_success": 0.33,
+            "fun_partial_success": 0.6946107784431138,
+            "fun_success": 0.5948103792415169
+        },
+        "Incoder_C": {
+            "class_partial_success": 0.1,
+            "class_success": 0.04,
+            "fun_partial_success": 0.44510978043912175,
+            "fun_success": 0.2654690618762475
+        },
+        "Incoder_H": {
+            "class_partial_success": 0.07,
+            "class_success": 0.04,
+            "fun_partial_success": 0.3313373253493014,
+            "fun_success": 0.18562874251497005
+        },
+        "Incoder_I": {
+            "class_partial_success": 0.13,
+            "class_success": 0.08,
+            "fun_partial_success": 0.4491017964071856,
+            "fun_success": 0.29141716566866266
+        },
+        "Instruct-CodeGen_C": {
+            "class_partial_success": 0.16,
+            "class_success": 0.08,
+            "fun_partial_success": 0.4091816367265469,
+            "fun_success": 0.27944111776447106
+        },
+        "Instruct-CodeGen_H": {
+            "class_partial_success": 0.19,
+            "class_success": 0.11,
+            "fun_partial_success": 0.3912175648702595,
+            "fun_success": 0.2714570858283433
+        },
+        "Instruct-CodeGen_I": {
+            "class_partial_success": 0.18,
+            "class_success": 0.13,
+            "fun_partial_success": 0.5109780439121756,
+            "fun_success": 0.3712574850299401
+        },
+        "Instruct-StarCoder_C": {
+            "class_partial_success": 0.21,
+            "class_success": 0.14,
+            "fun_partial_success": 0.4291417165668663,
+            "fun_success": 0.3193612774451098
+        },
+        "Instruct-StarCoder_H": {
+            "class_partial_success": 0.21,
+            "class_success": 0.14,
+            "fun_partial_success": 0.36327345309381237,
+            "fun_success": 0.2774451097804391
+        },
+        "Instruct-StarCoder_I": {
+            "class_partial_success": 0.2,
+            "class_success": 0.13,
+            "fun_partial_success": 0.38323353293413176,
+            "fun_success": 0.3013972055888224
+        },
+        "PolyCoder_C": {
+            "class_partial_success": 0.07,
+            "class_success": 0.03,
+            "fun_partial_success": 0.34930139720558884,
+            "fun_success": 0.14770459081836326
+        },
+        "PolyCoder_H": {
+            "class_partial_success": 0.01,
+            "class_success": 0.0,
+            "fun_partial_success": 0.029940119760479042,
+            "fun_success": 0.003992015968063872
+        },
+        "PolyCoder_I": {
+            "class_partial_success": 0.05,
+            "class_success": 0.03,
+            "fun_partial_success": 0.37924151696606784,
+            "fun_success": 0.19560878243512975
+        },
+        "SantaCoder_C": {
+            "class_partial_success": 0.12,
+            "class_success": 0.04,
+            "fun_partial_success": 0.47904191616766467,
+            "fun_success": 0.2834331337325349
+        },
+        "SantaCoder_H": {
+            "class_partial_success": 0.04,
+            "class_success": 0.03,
+            "fun_partial_success": 0.13572854291417166,
+            "fun_success": 0.0499001996007984
+        },
+        "SantaCoder_I": {
+            "class_partial_success": 0.19,
+            "class_success": 0.1,
+            "fun_partial_success": 0.5169660678642715,
+            "fun_success": 0.34930139720558884
+        },
+        "Vicuna_C": {
+            "class_partial_success": 0.07,
+            "class_success": 0.03,
+            "fun_partial_success": 0.40718562874251496,
+            "fun_success": 0.20958083832335328
+        },
+        "Vicuna_H": {
+            "class_partial_success": 0.07,
+            "class_success": 0.02,
+            "fun_partial_success": 0.2934131736526946,
+            "fun_success": 0.1437125748502994
+        },
+        "Vicuna_I": {
+            "class_partial_success": 0.07,
+            "class_success": 0.04,
+            "fun_partial_success": 0.3532934131736527,
+            "fun_success": 0.18363273453093812
+        },
+        "WizardCoder_C": {
+            "class_partial_success": 0.32,
+            "class_success": 0.23,
+            "fun_partial_success": 0.656686626746507,
+            "fun_success": 0.5109780439121756
+        },
+        "WizardCoder_H": {
+            "class_partial_success": 0.3,
+            "class_success": 0.2,
+            "fun_partial_success": 0.5409181636726547,
+            "fun_success": 0.437125748502994
+        },
+        "WizardCoder_I": {
+            "class_partial_success": 0.13,
+            "class_success": 0.08,
+            "fun_partial_success": 0.5169660678642715,
+            "fun_success": 0.3812375249500998
+        }
+    }
+}
