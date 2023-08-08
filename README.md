@@ -152,7 +152,7 @@ The evaluation results are systematically cataloged in the `output/result` direc
 
 - **detailed_result.json**: Dive deep with a meticulous examination of every test case across models' outputs.
 
-- **log_data.log**: Contains the runtime logs for every test case.
+The runtime logs for every test case are in the  `log` directory.
 
 ## License
 
