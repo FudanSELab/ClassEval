@@ -8,8 +8,6 @@ for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.0
 
 ### Plan
 - Huggingface Support
-- Usage Code
-- Documentation
 - ...
 
 ## Benchmark Dataset
@@ -78,7 +76,7 @@ We devise three distinct generation strategies for evaluating LLMs on class-leve
 
 The holistic generation strategy evaluates the model ability of handling long and complicated coding tasks all at once, while the incremental and compositional generation strategies focus on step-by-step class completion. The incremental strategy simulates progressive software development, where developers incrementally implement current methods based on existing ones. In constrast, the compositional strategy simulates real-world programming scenarios, where developers implement current methods based on other available method signatures.
 
-## Evaluation
+## Implementation
 
  we consider two sampling methods for code generation: (i) nucleus sampling, where five solution code samples are randomly generated for each task with a temperature of 0.2 and default top_p, and (ii) greedy sampling, where only one single solution code sample is generated for each task using greedy decoding, i.e., setting the “do_sample” hyperparameter to false (temperature of 0). Our experiments are run on a computational infrastructure comprising eight A800-80G GPUs
 
@@ -109,13 +107,56 @@ and compositional generation)
 
 ## Usage
 
-We will publish the comprehensive evaluation code and detailed usage in the next few days.
+### Installation
 
-# License
+Create a virtual environment, python version >= 3.8.
+
+```
+$ conda create -n classeval python=3.8
+$ conda activate classeval
+```
+Check out and install this repository:
+    
+```
+$ git clone https://github.com/FudanSELab/ClassEval
+$ pip install -e ClassEval
+```
+
+### Prerequisites:
+
+-  Place `ClassEval_data.json` in the `data` directory for seamless access.
+
+- Store all model-generated outputs in the `output/model_output` directory. Ensure these are in JSON format, under the key `predict` which maps to the list of generated code samples.
+
+### Evaluation
+
+To evaluate the models' performance on class-level code generation task, we provide `evaluation.py`. Navigate to the `classeval_evaluation` directory and run:
+
+```
+python evaluation.py --source_file_name model_output --eval_data ClassEval_data --greedy 1
+```
+
+- `--source_file_name`: Specifies the filenames pertaining to model outputs.
+- `--greedy`: Specifies the sampling methods for generation. Permissible values:
+    - 0: Nucleus sampling
+    - 1: Greedy sampling
+- `--eval_data`:  Refers to the benchmark data file, named `ClassEval_data` in the current rendition.
+
+### Output
+
+The evaluation results are systematically cataloged in the `output/result` directory:
+
+- **pass_at_k_result.json**: This file aggregates the pass@k metrics across all models' outputs.
+
+- **detailed_result.json**: Dive deep with a meticulous examination of every test case across models' outputs.
+
+- **log_data.log**: Contains the runtime logs for every test case.
+
+## License
 
 This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/master/LICENSE) license. But the data is distributes through [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
 
-# Citation
+## Citation
 
 ```
 @misc{du2023classeval,
