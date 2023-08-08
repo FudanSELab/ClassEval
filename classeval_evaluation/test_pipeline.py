@@ -66,11 +66,13 @@ class AutoTest:
                 except:
                     continue
             code_list = text.split("\n")
+            removed_lines = []
             for code_line in code_list:
                 if code_line.strip().startswith('class'):
                     break
-                elif not code_line.strip().startswith('import') or not code_line.strip().startswith('from'):
-                    code_list.remove(code_line)
+                elif not code_line.strip().startswith('import') and not code_line.strip().startswith('from'):
+                    removed_lines.append(code_line)
+            code_list = [line for line in code_list if line not in removed_lines]
             text = '\n'.join(code_list)
             return text
 
@@ -84,7 +86,7 @@ class AutoTest:
             code_list[item['task_id']] = []
             for predict in item['predict']:
                 predict = self.extract_code(predict, file_path)
-                predict = '\n'.join(self.eval_data[item['task_id']]['import_statement']) + predict
+                predict = '\n'.join(self.eval_data[item['task_id']]['import_statement']) + '\n' + predict
                 code_list[item['task_id']].append(predict)
         return code_list
 
