@@ -62,7 +62,8 @@ The comparison of the inputs for the ClassEval, HumanEval, and MBPP benchmarks i
 
 The comparison of test case examples from the ClassEval, HumanEval, and MBPP datasets is depicted in the following figure:
 
-![](output/images/test example.png)
+<img src="output\images\test example.png" alt="test example" style="zoom: 28%;" />
+
 
 ## Generation Strategies
 
