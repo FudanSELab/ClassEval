@@ -79,7 +79,7 @@ The holistic generation strategy evaluates the model ability of handling long an
 
 ## Implementation
 
- we consider two sampling methods for code generation: (i) nucleus sampling, where five solution code samples are randomly generated for each task with a temperature of 0.2 and default top_p, and (ii) greedy sampling, where only one single solution code sample is generated for each task using greedy decoding, i.e., setting the “do_sample” hyperparameter to false (temperature of 0). Our experiments are run on a computational infrastructure comprising eight A800-80G GPUs
+We consider two sampling methods for code generation: (i) nucleus sampling, where five solution code samples are randomly generated for each task with a temperature of 0.2 and default top_p, and (ii) greedy sampling, where only one single solution code sample is generated for each task using greedy decoding, i.e., setting the “do_sample” hyperparameter to false (temperature of 0). Our experiments are run on a computational infrastructure comprising eight A800-80G GPUs.
 
 ## Results
 
@@ -125,35 +125,16 @@ $ pip install -e ClassEval
 
 ### Prerequisites:
 
--  Place `ClassEval_data.json` in the `data` directory for seamless access.
+- Place `ClassEval_data.json` in the `data` directory for seamless access.
 
 - Store all model-generated outputs in the `output/model_output` directory. Ensure these are in JSON format, under the key `predict` which maps to the list of generated code samples.
 
+### Generation
+For a detailed exploration of our implemention of class-level code generation, visit [Generation](https://github.com/FudanSELab/ClassEval/blob/master/generation).
+
+
 ### Evaluation
-
-To evaluate the models' performance on class-level code generation task, we provide `evaluation.py`. Navigate to the `classeval_evaluation` directory and run:
-
-```
-python evaluation.py --source_file_name model_output --eval_data ClassEval_data --greedy 1
-```
-
-- `--source_file_name`: Specifies the filenames pertaining to model outputs.
-- `--greedy`: Specifies the sampling methods for generation. Permissible values:
-    - 0: Nucleus sampling.
-    - 1: Greedy sampling.
-- `--eval_data`:  Refers to the benchmark data file, named `ClassEval_data` in the current rendition.
-
-Our nucleus sampling encompasses 5 samples. During the evaluation, we restrict our scope to the results of pass@1, pass@3, and pass@5. If there's a need to generate a different sample size, it necessitates adjustments `cal_metrics_pass_at_k(model_list, k, n)` in the `evaluation.py` code, where k represents the 'k' in pass@k and n stands for the sample count.
-
-### Output
-
-The evaluation results are systematically cataloged in the `output/result` directory:
-
-- **pass_at_k_result.json**: This file aggregates the pass@k metrics across all models' outputs.
-
-- **detailed_result.json**: Dive deep with a meticulous examination of every test case across models' outputs.
-
-The runtime logs for every test case are in the  `log` directory.
+For an in-depth exploration of our evaluation implemention, visit [Evaluation](https://github.com/FudanSELab/ClassEval/blob/master/classeval_evaluation).
 
 ## License
 
