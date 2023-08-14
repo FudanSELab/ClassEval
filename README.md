@@ -56,9 +56,9 @@ Detailed information for each method in the "methods_info" field, including:
 
 The comparison of the inputs for the ClassEval, HumanEval, and MBPP benchmarks is illustrated in the following figures:
 
-<img src="output\images\classeval example.png" alt="other benchmark example" style="zoom: 25%;" />
+<img src="output\images\classeval example.png" alt="other benchmark example" style="zoom: 5%;" />
 
-<img src="output\images\other benchmark example.png" alt="other benchmark example" style="zoom: 28%;" />
+<img src="output\images\other benchmark example.png" alt="other benchmark example" style="zoom: 8%;" />
 
 The comparison of test case examples from the ClassEval, HumanEval, and MBPP datasets is depicted in the following figure:
 
