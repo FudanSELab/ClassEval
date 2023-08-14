@@ -108,33 +108,35 @@ and compositional generation)
 
 ## Usage
 
-### Installation
+Ensure you're using the right setup and following the proper directory structure to seamlessly evaluate class-level code generation with our tool.
 
-Create a virtual environment, python version >= 3.8.
+### 🛠️ Setup
 
+1. Environment Setup
+
+Ensure you're running Python 3.8 or newer. We recommend setting up a virtual environment:
 ```
 $ conda create -n classeval python=3.8
 $ conda activate classeval
 ```
-Check out and install this repository:
-    
+
+2. Repository Setup
+
+Clone the repository and install necessary dependencies:
 ```
 $ git clone https://github.com/FudanSELab/ClassEval
 $ pip install -e ClassEval
 ```
 
-### Prerequisites:
+### 📁 Data & Output Structure
+**Data**: Ensure `ClassEval_data.json` is placed in the `data` directory
 
-- Place `ClassEval_data.json` in the `data` directory for seamless access.
+**Model Outputs**: Keep all model-generated outputs in `output/model_output`. These outputs should be in JSON format, with predictions under the `predict` key, pointing to the list of generated code samples.
 
-- Store all model-generated outputs in the `output/model_output` directory. Ensure these are in JSON format, under the key `predict` which maps to the list of generated code samples.
+### 🔍 Deep Dives
+**Class-Level Code Generation**: Dive into our implementation details [here](https://github.com/FudanSELab/ClassEval/blob/master/generation).
 
-### Generation
-For a detailed exploration of our implemention of class-level code generation, visit [Generation](https://github.com/FudanSELab/ClassEval/blob/master/generation).
-
-
-### Evaluation
-For an in-depth exploration of our evaluation implemention, visit [Evaluation](https://github.com/FudanSELab/ClassEval/blob/master/classeval_evaluation).
+**Evaluation Process**: Explore in-depth [here](https://github.com/FudanSELab/ClassEval/blob/master/classeval_evaluation).
 
 ## License
 
