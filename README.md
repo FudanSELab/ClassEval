@@ -142,6 +142,28 @@ $ pip install -e ClassEval
 
 This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/master/LICENSE) license. But the data is distributes through [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
 
+## Contributors
+
+Xueying Du xueyingdu21@m.fudan.edu.cn
+
+Mingwei Liu liumingwei@fudan.edu.cn
+
+Kaixin Wang kxwang23@m.fudan.edu.cn
+
+Hanlin Wang wanghanlin23@m.fudan.edu.cn
+
+Junwei Liu jwliu22@m.fudan.edu.cn
+
+Yixuan Chen 23212010005@m.fudan.edu.cn
+
+Jiayi Feng 23210240148@m.fudan.edu.cn
+
+Chaofeng Sha cfsha@fudan.edu.cn
+
+Xin Peng pengxin@fudan.edu.cn
+
+Yiling Lou yilinglou@fudan.edu.cn
+
 ## Citation
 
 ```
