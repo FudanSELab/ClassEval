@@ -146,7 +146,7 @@ This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/mast
 
 Xueying Du xueyingdu21@m.fudan.edu.cn
 
-Mingwei Liu liumingwei@fudan.edu.cn
+[Mingwei Liu](https://mingwei-liu.github.io/) liumingwei@fudan.edu.cn
 
 Kaixin Wang kxwang23@m.fudan.edu.cn
 
