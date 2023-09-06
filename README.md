@@ -138,6 +138,15 @@ $ pip install -e ClassEval
 
 **Evaluation Process**: Explore in-depth [here](https://github.com/FudanSELab/ClassEval/blob/master/classeval_evaluation).
 
+## Hugging Face Support
+
+<https://huggingface.co/datasets/FudanSELab/ClassEval>
+
+```python
+from datasets import load_dataset
+dataset = load_dataset("FudanSELab/ClassEval")
+```
+
 ## License
 
 This repository is under [MIT](https://github.com/FudanSELab/ClassEval/blob/master/LICENSE) license. But the data is distributes through [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
