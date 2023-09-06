@@ -140,8 +140,9 @@ $ pip install -e ClassEval
 
 ## Hugging Face Support
 
-<https://huggingface.co/datasets/FudanSELab/ClassEval>
+To access ClassEval on Hugging Face, follow this link: <https://huggingface.co/datasets/FudanSELab/ClassEval>
 
+To load the dataset, use the code below:
 ```python
 from datasets import load_dataset
 dataset = load_dataset("FudanSELab/ClassEval")
