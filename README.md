@@ -6,10 +6,6 @@ for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.0
 ## Updates
 - 2023-08-05: Initial Benchmark Release
 
-### Plan
-- Huggingface Support
-- ...
-
 ## Benchmark Dataset
 
 We manually build ClassEval of 100 class-level Python coding tasks, consists of 100 classes and 412 methods, and average 33.1 test cases per class.
