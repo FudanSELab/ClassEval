@@ -5,6 +5,7 @@ for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.0
 
 ## Updates
 - 2023-08-05: Initial Benchmark Release
+- 2023-09-04: add Huggingface support
 
 ## Benchmark Dataset
 
