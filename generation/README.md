@@ -134,7 +134,7 @@ Instruction-I: *Please complete the method **${Method Name}** within the followi
 
 We provide a more explicit representation of the iterative generation process in the following figure: 
 
-<img src="output\images\incremental generation.png" alt="other benchmark example" style="zoom: 5%;" />
+<img src="incremental generation.png" alt="Incremental Generation Process" style="zoom: 5%;" />
 
 Instruction-C: *Please complete the method ${Method Name} within the following class **${Class Name}**. **${Class-level Info} ${Other Method Signatures} ${Target Method Contract Design}***
 '''
