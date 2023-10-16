@@ -121,10 +121,7 @@ We can categorize all studied LLMs into three distinct classes based on their ca
 Following the common practice of prompting LLMs with IF ability like WizardCoder, we set their prompts
 of two parts: (i) a system prompt as the beginning sentence to initialize the model, and followed by (ii) a task instruction to describe the goal of the task.
 
-System Prompt: 
-'''
-Provided below is an instruction detailing a task. Compose a response that aptly fulfills the request.
-'''
+System Prompt: *Provided below is an instruction detailing a task. Compose a response that aptly fulfills the request.*
 
 Instruction-H: *Please complete the class **${Class Name}** in the subsequent code. **${Class Skeleton}***
 
@@ -137,7 +134,6 @@ We provide a more explicit representation of the iterative generation process in
 <img src="incremental generation.png" alt="Incremental Generation Process" style="zoom: 5%;" />
 
 Instruction-C: *Please complete the method ${Method Name} within the following class **${Class Name}**. **${Class-level Info} ${Other Method Signatures} ${Target Method Contract Design}***
-'''
 
 **${Class-level Info}** encompasses import statements, class name, class description, and class constructor, while **${Target Method Contract Design}** includes method signature, functional description, parameter/return description, and example input/output. Detailed content for each component can be found in Figure 2 of the paper.
 
