@@ -129,7 +129,7 @@ Refer to Figure 2 in the paper for details on the class skeleton.
 
 **Instruction-I**: *Please complete the method **${Method Name}** within the following class **${Class Name}. ${Class-level Info} ${Generated Methods with Contract Designs} ${Target Method Contract Design}***
 
-We provide a more explicit representation of the iterative generation process in the following figure: 
+We provide a more explicit representation of the incremental generation process in the following figure: 
 
 <img src="incremental generation.png" alt="Incremental Generation Process" style="zoom: 5%;" />
 
