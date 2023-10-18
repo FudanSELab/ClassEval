@@ -278,7 +278,7 @@ class AutoTest:
 
     def tear_down(self):
         file_list = os.listdir()
-        reserved_files = ["evaluation.py", "path_util.py", "test_pipeline.py"]
+        reserved_files = ["evaluation.py", "path_util.py", "test_pipeline.py", "README.md"]
         for item in file_list:
             if item not in reserved_files and "test_pipeline" not in item and "_pycache__" not in item:
                 if os.path.isdir(item):
