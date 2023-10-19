@@ -51,6 +51,8 @@ Detailed information for each method in the "methods_info" field, including:
 
 * dependencies: the dependency information of the method.
 
+For more details in benchmark construction, go [here](./data/README.md).
+
 The comparison of the inputs for the ClassEval, HumanEval, and MBPP benchmarks is illustrated in the following figures:
 
 <img src="output\images\classeval example.png" alt="other benchmark example" style="zoom: 5%;" />
