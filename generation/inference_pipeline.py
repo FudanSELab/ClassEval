@@ -3,6 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig, 
 import json
 from tqdm import tqdm
 from inference_util import InferenceUtil, ModelName, GenerationStrategy
+import os
 import openai
 
 class InferencePipeline:
@@ -12,7 +13,9 @@ class InferencePipeline:
             self.file_cont = json.load(f)
         self.greedy = args.greedy
         self.output_path = args.output_path
-        self.cuda = args.cuda
+        self.cuda = "cuda"
+        if args.cuda is not None:
+            os.environ["CUDA_VISIBLE_DEVICES"] = ','.join([str(i) for i in args.cuda])
         self.generation_strategy = args.generation_strategy
         self.model_name = args.model
         self.checkpoint = args.checkpoint
@@ -30,24 +33,30 @@ class InferencePipeline:
             return
         elif self.model_name == ModelName.ChatGLM.value:
             self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint, trust_remote_code = True)
-            self.model = AutoModel.from_pretrained(self.checkpoint, trust_remote_code = True).half().to(self.cuda)
+            self.model = AutoModel.from_pretrained(self.checkpoint, trust_remote_code = True, device_map="auto").half()
             self.model = self.model.eval()
         elif self.model_name == ModelName.PolyCoder.value or self.model_name == ModelName.SantaCoder.value:
             self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint, trust_remote_code = True)
-            self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code = True).to(self.cuda)
+            self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code = True, device_map="auto")
             self.model = self.model.eval()
             self.tokenizer.pad_token = self.tokenizer.eos_token
             self.generation_config = GenerationConfig(
                 temperature = 0 if self.greedy == 1 else self.temperature,
                 eos_token_id = self.tokenizer.eos_token_id,
                 pad_token_id = self.tokenizer.pad_token_id
+            ) if self.greedy == 0 else GenerationConfig(
+                eos_token_id = self.tokenizer.eos_token_id,
+                pad_token_id = self.tokenizer.pad_token_id
             )
         else:
             self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint, trust_remote_code = True)
-            self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code = True, torch_dtype = torch.float16).to(self.cuda)
+            self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code = True, torch_dtype = torch.float16, device_map="auto")
             self.model = self.model.eval()
             self.generation_config = GenerationConfig(
                 temperature = 0 if self.greedy == 1 else self.temperature,
+                eos_token_id = self.tokenizer.eos_token_id,
+                pad_token_id = self.tokenizer.pad_token_id
+            ) if self.greedy == 0 else GenerationConfig(
                 eos_token_id = self.tokenizer.eos_token_id,
                 pad_token_id = self.tokenizer.pad_token_id
             )
@@ -82,7 +91,10 @@ class InferencePipeline:
                 )
             outputs = response.choices[0]["message"]["content"]
         elif self.model_name == ModelName.ChatGLM.value:
-            outputs, _ = self.model.chat(self.tokenizer, prompt, temperature = self.temperature, do_sample = self.do_sample)
+            if self.do_sample:
+                outputs, _ = self.model.chat(self.tokenizer, prompt, temperature = self.temperature, do_sample = self.do_sample)
+            else:
+                outputs, _ = self.model.chat(self.tokenizer, prompt, do_sample = self.do_sample)
         else:
             input_ids = self.tokenizer.encode(prompt, return_tensors = "pt", max_length = self.max_length, truncation = True).to(self.cuda)
             outputs = self.model.generate(input_ids, generation_config = self.generation_config, 

@@ -24,8 +24,9 @@ def args_init():
     parser.add_argument(
         "--cuda",
         type=int,
-        default=0,
-        help="number of cuda",
+        nargs="+",  # Accept one or more integers
+        default=None,
+        help="List of CUDA device(s), default value is None. If not set, use all available devices.",
     )
     parser.add_argument(
         "--generation_strategy",

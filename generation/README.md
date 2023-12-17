@@ -9,7 +9,7 @@ python inference.py \
 --output_path model_output.json \
 --greedy 1 \
 --data_path ../data/ClassEval_data.json \
---cuda 0 \
+--cuda 0 1 \
 --generation_strategy 0
 
 ```
