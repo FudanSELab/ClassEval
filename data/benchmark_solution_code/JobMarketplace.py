@@ -63,7 +63,7 @@ class JobMarketplace:
     def search_jobs(self, criteria):
         """
         This function is used to search for positions,and return the position information that meets the requirements.
-        :param criteria: The requirements of the position,list.
+        :param criteria: The requirements of the position,str.
         :return: The position information that meets the requirements,list.
         >>> jobMarketplace = JobMarketplace()
         >>> jobMarketplace.job_listings = [{"job_title": "Software Engineer", "company": "ABC Company", "requirements": ['skill1', 'skill2']}]

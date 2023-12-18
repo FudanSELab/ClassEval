@@ -1,7 +1,5 @@
 import unittest
 import sys
-sys.path.append(r'C:\Users\86181\Desktop\forgit\SE-Eval-Benchmark')
-from benchmark_code.HtmlUtil import HtmlUtil
 
 class HtmlUtilTestFormatLineFeed(unittest.TestCase):
     def test_format_line_feed_1(self):

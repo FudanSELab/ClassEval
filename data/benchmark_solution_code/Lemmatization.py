@@ -26,6 +26,7 @@ class Lemmatization:
         >>> lemmatization = Lemmatization()
         >>> lemmatization.lemmatize_sentence("I am running in a race.")
         ['I', 'be', 'run', 'in', 'a', 'race']
+
         """
 
     def get_pos_tag(self, sentence):
@@ -36,6 +37,7 @@ class Lemmatization:
         >>> lemmatization = Lemmatization()
         >>> lemmatization.get_pos_tag("I am running in a race.")
         ['PRP', 'VBP', 'VBG', 'IN', 'DT', 'NN']
+
         """
 
     def remove_punctuation(self, sentence):
@@ -46,6 +48,7 @@ class Lemmatization:
         >>> lemmatization = Lemmatization()
         >>> lemmatization.remove_punctuation("I am running in a race.")
         'I am running in a race'
+
         """
 '''
 
@@ -54,8 +57,9 @@ from nltk.stem import WordNetLemmatizer
 from nltk import pos_tag, word_tokenize
 import string
 
-nltk.download('averaged_perceptron_tagger')
-nltk.download('punkt')
+# nltk.download('averaged_perceptron_tagger')
+# nltk.download('punkt')
+# nltk.download('wordnet')
 
 
 class Lemmatization:
@@ -90,4 +94,3 @@ class Lemmatization:
 
     def remove_punctuation(self, sentence):
         return sentence.translate(str.maketrans('', '', string.punctuation))
-

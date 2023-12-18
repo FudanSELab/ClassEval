@@ -1,6 +1,5 @@
 import unittest
 
-
 class LemmatizationTestLemmatizeSentence(unittest.TestCase):
     def test_lemmatize_sentence_1(self):
         lemmatization = Lemmatization()
@@ -105,4 +104,3 @@ class LemmatizationTestMain(unittest.TestCase):
         result = lemmatization.get_pos_tag("Cantanco's eyesight had been weak, but adequate.")
         expected = ['NNP', 'NN', 'VBD', 'VBN', 'JJ', 'CC', 'JJ']
         self.assertEqual(result, expected)
-
