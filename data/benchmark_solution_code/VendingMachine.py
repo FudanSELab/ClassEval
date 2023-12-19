@@ -67,7 +67,7 @@ class VendingMachine:
     def display_items(self):
         """
         Displays the products in the vending machine.
-        :return: If the vending machine is empty, returns False, otherwise, returns a list of the products in the vending machine, list.
+        :return: If the vending machine is empty, returns False, otherwise, returns a list of the products in the vending machine, str.
         >>> vendingMachine = VendingMachine()
         >>> vendingMachine.display_items()
         False
