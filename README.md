@@ -4,8 +4,9 @@ ClassEval is the first class-level code generation benchmark described in the pa
 for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.01861). 
 
 ## Updates
-- 2023-08-05: Initial Benchmark Release
-- 2023-09-04: add Huggingface support
+- 2023-08-05: Initial benchmark release
+- 2023-09-04: Add Huggingface support
+- 2023-12-19: Update to version 1.1.0
 
 ## Benchmark Dataset
 
