@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 setup(
     name="ClassEval",
     py_modules=["ClassEval"],
-    version="1.0",
+    version="1.1.0",
     description="",
     author="FDSE",
     packages=find_packages(),
