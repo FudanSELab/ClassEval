@@ -53,9 +53,10 @@ class InferencePipeline:
             self.model = AutoModelForCausalLM.from_pretrained(self.checkpoint, trust_remote_code = True, torch_dtype = torch.float16, device_map="auto")
             self.model = self.model.eval()
             self.generation_config = GenerationConfig(
-                temperature = 0 if self.greedy == 1 else self.temperature,
+                temperature = self.temperature,
                 eos_token_id = self.tokenizer.eos_token_id,
-                pad_token_id = self.tokenizer.pad_token_id
+                pad_token_id = self.tokenizer.pad_token_id,
+                do_sample = True
             ) if self.greedy == 0 else GenerationConfig(
                 eos_token_id = self.tokenizer.eos_token_id,
                 pad_token_id = self.tokenizer.pad_token_id
@@ -90,6 +91,16 @@ class InferencePipeline:
                     ]
                 )
             outputs = response.choices[0]["message"]["content"]
+        elif self.model_name == ModelName.DeepSeekCoder_inst.value:
+            messages=[
+                { "role": "user", "content": prompt }
+            ]
+            input_ids = self.tokenizer.apply_chat_template(messages, add_generation_prompt = True, return_tensors = "pt",
+                                                           max_length = self.max_length, truncation = True).to(self.cuda)
+            # 32021 is the id of <|EOT|> token
+            outputs = self.model.generate(input_ids, generation_config = self.generation_config, 
+                                          max_length = self.max_length, do_sample = self.do_sample, eos_token_id = 32021)
+            outputs = self.tokenizer.decode(outputs[0], skip_special_tokens = True)
         elif self.model_name == ModelName.ChatGLM.value:
             if self.do_sample:
                 outputs, _ = self.model.chat(self.tokenizer, prompt, temperature = self.temperature, do_sample = self.do_sample)
@@ -113,19 +124,39 @@ class InferencePipeline:
                 skeleton = info['skeleton']
                 instruction = f"Please complete the class {class_name} in the following code."
                 instruction = instruction + '\n' + skeleton
-                prompt = InferenceUtil.generate_prompt(instruction)
+
+                if self.model_name == ModelName.DeepSeekCoder_inst.value:
+                    prompt = instruction
+                elif self.model_name == ModelName.Magicoder.value:
+                    prompt = InferenceUtil.generate_prompt(instruction, 2)
+                else:
+                    prompt = InferenceUtil.generate_prompt(instruction)
 
         elif strategy == GenerationStrategy.Incremental:
             if self.model_name == ModelName.PolyCoder.value or self.model_name == ModelName.SantaCoder.value:
                 prompt = info['skeleton']
             else:
-                prompt = InferenceUtil.generate_prompt(info['instruction'] + info['skeleton'])
+                prompt = info['instruction'] + info['skeleton']
+                
+                if self.model_name == ModelName.DeepSeekCoder_inst.value:
+                    prompt = prompt
+                elif self.model_name == ModelName.Magicoder.value:
+                    prompt = InferenceUtil.generate_prompt(prompt, 2)
+                else:
+                    prompt = InferenceUtil.generate_prompt(prompt)
 
         elif strategy == GenerationStrategy.Compositional:
             if self.model_name == ModelName.PolyCoder.value or self.model_name == ModelName.SantaCoder.value:
                 prompt = info['skeleton']
             else:
-                prompt = InferenceUtil.generate_prompt(info['instruction'] + info['skeleton'])
+                prompt = info['instruction'] + info['skeleton']
+                
+                if self.model_name == ModelName.DeepSeekCoder_inst.value:
+                    prompt = prompt
+                elif self.model_name == ModelName.Magicoder.value:
+                    prompt = InferenceUtil.generate_prompt(prompt, 2)
+                else:
+                    prompt = InferenceUtil.generate_prompt(prompt)
 
         return prompt
 

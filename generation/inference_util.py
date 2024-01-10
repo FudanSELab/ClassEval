@@ -4,13 +4,23 @@ from enum import Enum
 class InferenceUtil:
 
     @staticmethod
-    def generate_prompt(instruction):
-        return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
+    def generate_prompt(instruction, type = 1):
+        if type == 1:
+            return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
 ### Instruction:
 {instruction}
 
 ### Response:"""
+
+        if type == 2:
+            return f"""You are an exceptionally intelligent coding assistant that consistently delivers accurate and reliable responses to user instructions.
+
+@@ Instruction:
+{instruction}
+
+@@ Response:
+"""
 
     @staticmethod
     def get_leading_spaces(string):
@@ -43,6 +53,8 @@ class InferenceUtil:
         # extract code of method {method_name} from {code}
         if "### Response:" in code:
             code_list = code.split("### Response:")[1].split('\n')
+        elif "@@ Response" in code:
+            code_list = code.split("@@ Response")[1].split('\n')
         else:
             code_list = code.split('\n')
         method_code_list = []
@@ -94,6 +106,9 @@ class ModelName(Enum):
     GPT_3_5 = 8
     GPT_4 = 9
     others = 10
+    Magicoder = 11
+    CodeGeeX2 = 12
+    DeepSeekCoder_inst = 13
 
 class GenerationStrategy(Enum):
     Holistic = 0
