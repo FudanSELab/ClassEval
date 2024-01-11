@@ -41,9 +41,10 @@ class InferencePipeline:
             self.model = self.model.eval()
             self.tokenizer.pad_token = self.tokenizer.eos_token
             self.generation_config = GenerationConfig(
-                temperature = 0 if self.greedy == 1 else self.temperature,
+                temperature = self.temperature,
                 eos_token_id = self.tokenizer.eos_token_id,
-                pad_token_id = self.tokenizer.pad_token_id
+                pad_token_id = self.tokenizer.pad_token_id,
+                do_sample = True
             ) if self.greedy == 0 else GenerationConfig(
                 eos_token_id = self.tokenizer.eos_token_id,
                 pad_token_id = self.tokenizer.pad_token_id
