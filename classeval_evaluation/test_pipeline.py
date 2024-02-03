@@ -40,17 +40,14 @@ class AutoTest:
         return imports
 
     def extract_code(self, text, model_name):
-        model_name_list = ["CodeT5p", "StarCoder", "CodeGen", "codegeex"]
-        for name in model_name_list:
-            if name in model_name:
-                model_name = name
+        text = text.rstrip()
+        output_split_identifier_list = ["### Response:", "@@ Response:", "[/INST]"]
+        for identifier in output_split_identifier_list:
+            if identifier in text:
+                text = text.split(identifier)[1]
+                break
 
-        if model_name in model_name_list:
-            if "### Response:" in text:
-                text = text.split("### Response:")[1]
-            return text
-
-        elif "incoder" in model_name:
+        if "incoder" in model_name:
             # remove <|/ file |>
             if "<|/ file |>" in text:
                 text = text.split("<|/ file |>")[0]
@@ -58,13 +55,14 @@ class AutoTest:
 
         else:
             pattern_list = [r"```python(.*?)```", r"```ruby(.*?)```", r"```scss(.*?)```",
-                            r"```python(.*?)", r"```(.*?)```", r".py(.*?).py",]
+                            r"```python(.*?)", r"```(.*?)```", r"\[PYTHON\](.*?)\[/PYTHON\]"]
             for pattern in pattern_list:
                 try:
                     code = re.findall(pattern, text, re.S)[0]
                     return code
                 except:
                     continue
+
             code_list = text.split("\n")
             removed_lines = []
             for code_line in code_list:
@@ -74,7 +72,36 @@ class AutoTest:
                     removed_lines.append(code_line)
             code_list = [line for line in code_list if line not in removed_lines]
             text = '\n'.join(code_list)
+
+            wrong_indent_flag = False
+            for code_line in text.split("\n"):
+                if code_line.strip().startswith('class'):
+                    class_signature_line_leading_spaces = self.get_leading_spaces(code_line)
+                    if class_signature_line_leading_spaces != 0:
+                        wrong_indent_flag = True
+                    break
+            if wrong_indent_flag:
+                final_code_line_list = []
+                for code_line in text.split("\n"):
+                    cur_leading_spaces = self.get_leading_spaces(code_line)
+                    # Keep the relative indentation unchanged
+                    final_code_line_list.append(' ' * (cur_leading_spaces - class_signature_line_leading_spaces) + code_line.lstrip())
+                text = '\n'.join(final_code_line_list)
             return text
+
+    def add_static_statement(self, code):
+        filtered_code_list = []
+        for line in code.split('\n'):
+            if '@staticmethod' in line:
+                continue
+            filtered_code_list.append(line)
+        code = '\n'.join(filtered_code_list)
+        final_code_list = []
+        for line in code.split('\n'):
+            if line.strip().startswith('def ') and 'self' not in line and 'cls' not in line and self.get_leading_spaces(line) == 4:
+                final_code_list.append('    @staticmethod')
+            final_code_list.append(line)
+        return '\n'.join(final_code_list)
 
     def gen_code_list(self, file_path):
         code_list = {}
@@ -86,6 +113,7 @@ class AutoTest:
             code_list[item['task_id']] = []
             for predict in item['predict']:
                 predict = self.extract_code(predict, file_path)
+                predict = self.add_static_statement(predict)
                 predict = '\n'.join(self.eval_data[item['task_id']]['import_statement']) + '\n' + predict
                 code_list[item['task_id']].append(predict)
         return code_list
@@ -278,7 +306,7 @@ class AutoTest:
 
     def tear_down(self):
         file_list = os.listdir()
-        reserved_files = ["evaluation.py", "path_util.py", "test_pipeline.py", "README.md"]
+        reserved_files = ["evaluation.py", "path_util.py", "test_pipeline.py", "README.md", "incremental generation.png", "run.sh"]
         for item in file_list:
             if item not in reserved_files and "test_pipeline" not in item and "_pycache__" not in item:
                 if os.path.isdir(item):
