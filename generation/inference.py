@@ -40,7 +40,7 @@ def args_init():
         default=1,
         help="Instruct_CodeGen = 0, WizardCoder = 1, Instruct_StarCoder = 2, InCoder = 3, \
         PolyCoder = 4, SantaCoder = 5, Vicuna = 6, ChatGLM = 7, GPT_3_5 = 8, GPT_4 = 9, others = 10, \
-        Magicoder = 11, CodeGeeX2 = 12, DeepSeekCoder_inst = 13",
+        Magicoder = 11, CodeGeeX2 = 12, DeepSeekCoder_inst = 13, Gemini_Pro = 14, CodeLlama_13b_inst = 15",
     )
     parser.add_argument(
         "--checkpoint",
@@ -50,7 +50,7 @@ def args_init():
     )
     parser.add_argument(
         "--temperature",
-        type=int,
+        type=float,
         default=0.2,
         help="temperature value in generation config",
     )
@@ -72,6 +72,14 @@ def args_init():
         default="openai_base",
         help="need openai base if use GPT-3.5 or GPT-4",
     )
+
+    parser.add_argument(
+        "--google_api_key",
+        type=str,
+        default="google_api_key",
+        help="need google api key if use Gemini Pro",
+    )
+
     parser.add_argument(
         "--sample",
         type=int,

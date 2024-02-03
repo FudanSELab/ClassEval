@@ -23,6 +23,7 @@ class InferencePipeline:
         self.max_length = args.max_length
         self.openai_key = args.openai_key
         self.openai_base = args.openai_base
+        self.google_api_key = args.google_api_key
 
         self.get_model_tokenizer_and_config()
         self.SAMPLE_NUMS = 1 if self.greedy == 1 else args.sample
@@ -31,6 +32,36 @@ class InferencePipeline:
     def get_model_tokenizer_and_config(self):
         if self.model_name == ModelName.GPT_3_5.value or self.model_name == ModelName.GPT_4.value:
             return
+        elif self.model_name == ModelName.Gemini_Pro.value:
+            import google.generativeai as genai
+            genai.configure(api_key = self.google_api_key, transport = 'rest')
+            safety_settings = [
+                {
+                    "category": "HARM_CATEGORY_HARASSMENT",
+                    "threshold": "BLOCK_NONE"
+                },
+                {
+                    "category": "HARM_CATEGORY_HATE_SPEECH",
+                    "threshold": "BLOCK_NONE"
+                },
+                {
+                    "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                    "threshold": "BLOCK_NONE"
+                },
+                {
+                    "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                    "threshold": "BLOCK_NONE"
+                },
+            ]
+
+            # Set up the model
+            generation_config = {
+                "temperature": 0 if self.greedy == 1 else self.temperature,
+                "top_p": 1,
+                "top_k": 1,
+                "max_output_tokens": self.max_length,
+            }
+            self.model = genai.GenerativeModel(model_name = "gemini-pro", generation_config = generation_config, safety_settings = safety_settings)
         elif self.model_name == ModelName.ChatGLM.value:
             self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint, trust_remote_code = True)
             self.model = AutoModel.from_pretrained(self.checkpoint, trust_remote_code = True, device_map="auto").half()
@@ -92,6 +123,10 @@ class InferencePipeline:
                     ]
                 )
             outputs = response.choices[0]["message"]["content"]
+        elif self.model_name == ModelName.Gemini_Pro.value:
+            prompt_parts = [prompt]
+            response = self.model.generate_content(prompt_parts)
+            outputs = response.text
         elif self.model_name == ModelName.DeepSeekCoder_inst.value:
             messages=[
                 { "role": "user", "content": prompt }
@@ -103,10 +138,7 @@ class InferencePipeline:
                                           max_length = self.max_length, do_sample = self.do_sample, eos_token_id = 32021)
             outputs = self.tokenizer.decode(outputs[0], skip_special_tokens = True)
         elif self.model_name == ModelName.ChatGLM.value:
-            if self.do_sample:
-                outputs, _ = self.model.chat(self.tokenizer, prompt, temperature = self.temperature, do_sample = self.do_sample)
-            else:
-                outputs, _ = self.model.chat(self.tokenizer, prompt, do_sample = self.do_sample)
+            outputs, _ = self.model.chat(self.tokenizer, prompt, temperature = self.temperature, do_sample = self.do_sample)
         else:
             input_ids = self.tokenizer.encode(prompt, return_tensors = "pt", max_length = self.max_length, truncation = True).to(self.cuda)
             outputs = self.model.generate(input_ids, generation_config = self.generation_config, 
@@ -125,39 +157,21 @@ class InferencePipeline:
                 skeleton = info['skeleton']
                 instruction = f"Please complete the class {class_name} in the following code."
                 instruction = instruction + '\n' + skeleton
-
-                if self.model_name == ModelName.DeepSeekCoder_inst.value:
-                    prompt = instruction
-                elif self.model_name == ModelName.Magicoder.value:
-                    prompt = InferenceUtil.generate_prompt(instruction, 2)
-                else:
-                    prompt = InferenceUtil.generate_prompt(instruction)
+                prompt = InferenceUtil.generate_prompt(instruction, self.model_name)
 
         elif strategy == GenerationStrategy.Incremental:
             if self.model_name == ModelName.PolyCoder.value or self.model_name == ModelName.SantaCoder.value:
                 prompt = info['skeleton']
             else:
                 prompt = info['instruction'] + info['skeleton']
-                
-                if self.model_name == ModelName.DeepSeekCoder_inst.value:
-                    prompt = prompt
-                elif self.model_name == ModelName.Magicoder.value:
-                    prompt = InferenceUtil.generate_prompt(prompt, 2)
-                else:
-                    prompt = InferenceUtil.generate_prompt(prompt)
+                prompt = InferenceUtil.generate_prompt(prompt, self.model_name)
 
         elif strategy == GenerationStrategy.Compositional:
             if self.model_name == ModelName.PolyCoder.value or self.model_name == ModelName.SantaCoder.value:
                 prompt = info['skeleton']
             else:
                 prompt = info['instruction'] + info['skeleton']
-                
-                if self.model_name == ModelName.DeepSeekCoder_inst.value:
-                    prompt = prompt
-                elif self.model_name == ModelName.Magicoder.value:
-                    prompt = InferenceUtil.generate_prompt(prompt, 2)
-                else:
-                    prompt = InferenceUtil.generate_prompt(prompt)
+                prompt = InferenceUtil.generate_prompt(prompt, self.model_name)
 
         return prompt
 
@@ -183,6 +197,7 @@ class InferencePipeline:
                     cont['predict'].append(class_code)
 
     def pipeline(self):
+        error_task_id_list = []
         if self.generation_strategy == GenerationStrategy.Holistic.value:
             result = []
             for cont in tqdm(self.file_cont):
@@ -199,6 +214,7 @@ class InferencePipeline:
                 except Exception as e:
                     print(e)
                     print("IDX: ", cont['task_id'])
+                    error_task_id_list.append(cont['task_id'])
 
         elif self.generation_strategy == GenerationStrategy.Incremental.value:
             result = []
@@ -236,6 +252,8 @@ class InferencePipeline:
                     except Exception as e:
                         print(e)
                         print("IDX: ", cont['task_id'])
+                        error_task_id_list.append(cont['task_id'])
+
                 result.append(cont)
                 self.save_result(result)
 
@@ -272,6 +290,7 @@ class InferencePipeline:
                     except Exception as e:
                         print(e)
                         print("IDX: ", cont['task_id'])
+                        error_task_id_list.append(cont['task_id'])
 
                 result.append(cont)
                 self.save_result(result)
@@ -279,5 +298,6 @@ class InferencePipeline:
             print("Unknown Generation Strategy")
             return
         
+        print("error_task_id_list: ", error_task_id_list)
         self.post_process(result)
         self.save_result(result)
