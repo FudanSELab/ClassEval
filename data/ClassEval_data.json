@@ -294,7 +294,7 @@
             "ArrangementCalculatorTestFactorial",
             "ArrangementCalculatorTest"
         ],
-        "class_constructor": "class ArrangementCalculator: \n    def __init__(self, datas):\n        \"\"\"\n        Initializes the ArrangementCalculator object with a list of datas.\n        :param datas: List, the data elements to be used for arrangements.\n        \"\"\"\n        self.datas = datas\n\n    @staticmethod\n",
+        "class_constructor": "class ArrangementCalculator: \n    def __init__(self, datas):\n        \"\"\"\n        Initializes the ArrangementCalculator object with a list of datas.\n        :param datas: List, the data elements to be used for arrangements.\n        \"\"\"\n        self.datas = datas\n",
         "fields": [
             "self.datas"
         ],
@@ -1968,7 +1968,7 @@
             "CombinationCalculatorTestSelect2",
             "CombinationCalculatorTestMain"
         ],
-        "class_constructor": "class CombinationCalculator: \n    def __init__(self, datas: List[str]):\n        \"\"\"\n        Initialize the calculator with a list of data.\n        \"\"\"\n        self.datas = datas\n\n    @staticmethod\n",
+        "class_constructor": "class CombinationCalculator: \n    def __init__(self, datas: List[str]):\n        \"\"\"\n        Initialize the calculator with a list of data.\n        \"\"\"\n        self.datas = datas\n",
         "fields": [
             "self.datas"
         ],
@@ -2069,7 +2069,7 @@
             "ComplexCalculatorTestDivide",
             "ComplexCalculatorTestMain"
         ],
-        "class_constructor": "class ComplexCalculator: \n    def __init__(self):\n        pass\n\n    @staticmethod\n",
+        "class_constructor": "class ComplexCalculator: \n    def __init__(self):\n        pass\n",
         "fields": [],
         "methods_info": [
             {
@@ -3791,7 +3791,7 @@
             "HtmlUtilTestExtractCodeFromHtmlText",
             "HtmlUtilTest"
         ],
-        "class_constructor": "class HtmlUtil: \n    def __init__(self):\n        \"\"\"\n        Initialize a series of labels\n        \"\"\"\n        self.SPACE_MARK = '-SPACE-'\n        self.JSON_MARK = '-JSON-'\n        self.MARKUP_LANGUAGE_MARK = '-MARKUP_LANGUAGE-'\n        self.URL_MARK = '-URL-'\n        self.NUMBER_MARK = '-NUMBER-'\n        self.TRACE_MARK = '-TRACE-'\n        self.COMMAND_MARK = '-COMMAND-'\n        self.COMMENT_MARK = '-COMMENT-'\n        self.CODE_MARK = '-CODE-'\n\n    @staticmethod\n",
+        "class_constructor": "class HtmlUtil: \n    def __init__(self):\n        \"\"\"\n        Initialize a series of labels\n        \"\"\"\n        self.SPACE_MARK = '-SPACE-'\n        self.JSON_MARK = '-JSON-'\n        self.MARKUP_LANGUAGE_MARK = '-MARKUP_LANGUAGE-'\n        self.URL_MARK = '-URL-'\n        self.NUMBER_MARK = '-NUMBER-'\n        self.TRACE_MARK = '-TRACE-'\n        self.COMMAND_MARK = '-COMMAND-'\n        self.COMMENT_MARK = '-COMMENT-'\n        self.CODE_MARK = '-CODE-'\n",
         "fields": [
             "self.CODE_MARK",
             "self.COMMAND_MARK",
@@ -3974,7 +3974,7 @@
             "InterpolationTestInterpolate2d",
             "InterpolationTestMain"
         ],
-        "class_constructor": "class Interpolation: \n    def __init__(self):\n        pass\n\n    @staticmethod\n",
+        "class_constructor": "class Interpolation: \n    def __init__(self):\n        pass\n",
         "fields": [],
         "methods_info": [
             {
@@ -4792,7 +4792,7 @@
             "MetricsCalculator2TestMap",
             "MetricsCalculator2Test"
         ],
-        "class_constructor": "class MetricsCalculator2: \n    def __init__(self):\n        pass\n\n    @staticmethod\n",
+        "class_constructor": "class MetricsCalculator2: \n    def __init__(self):\n        pass\n",
         "fields": [],
         "methods_info": [
             {
