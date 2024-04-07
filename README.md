@@ -1,4 +1,5 @@
-# ClassEval: Manually-Crafted Benchmark on Class-level Code Generation
+# Evaluating Large Language Models in Class-Level Code Generation
+
 
 ClassEval is the first class-level code generation benchmark described in the paper ["ClassEval: A Manually-Crafted Benchmark
 for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.01861). 
