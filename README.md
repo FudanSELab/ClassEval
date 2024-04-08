@@ -2,13 +2,14 @@
 
 
 ClassEval is the first class-level code generation benchmark described in the paper ["ClassEval: A Manually-Crafted Benchmark
-for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.01861). 
+for Evaluating LLMs on Class-level Code Generation"](http://arxiv.org/abs/2308.01861). Please checkout our [ClassEval Leaderboard](https://fudanselab-classeval.github.io/leaderboard.html) for the evaluation results of the most recent LLMs on class-level code generation. Feel free to contact us to submit new results.
 
 ## Updates
 - 2023-08-05: Initial benchmark release
 - 2023-09-04: Add Huggingface support
-- 2024-1-3: Release official version v1.0.0
-
+- 2024-01-03: Release official version v1.0.0
+- 2024-03-20: Add ClassEval learderboard
+- 
 ## Benchmark Dataset
 
 We manually build ClassEval of 100 class-level Python coding tasks, consists of 100 classes and 412 methods, and average 33.1 test cases per class.
