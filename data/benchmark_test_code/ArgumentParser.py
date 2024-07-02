@@ -22,7 +22,7 @@ class ArgumentParserTestParseArguments(unittest.TestCase):
     def test_parse_arguments_2(self):
         command_str = "script --verbose -d"
         self.parser.add_argument("verbose", arg_type=bool)
-        self.parser.add_argument("d")
+        self.parser.add_argument("d", arg_type=bool)
 
         result, missing_args = self.parser.parse_arguments(command_str)
 
