@@ -30,7 +30,7 @@ class AutomaticGuitarSimulatorTestInterpret(unittest.TestCase):
     def test_interpret_6(self):
         context = AutomaticGuitarSimulator(" ")
         play_list = context.interpret()
-        self.assertEqual(play_list, [{'Chord': '', 'Tune': ''}, {'Chord': '', 'Tune': ''}])
+        self.assertEqual(play_list, [])
 
     def test_interpret_7(self):
         context = AutomaticGuitarSimulator("ABC43231323 DEF63231323")
@@ -45,7 +45,7 @@ class AutomaticGuitarSimulatorTestInterpret(unittest.TestCase):
     def test_interpret_9(self):
         context = AutomaticGuitarSimulator("")
         play_list = context.interpret()
-        self.assertIsNone(play_list)
+        self.assertEqual(play_list, [])
 
 
 class AutomaticGuitarSimulatorTestDisplay(unittest.TestCase):
