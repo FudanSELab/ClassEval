@@ -13,6 +13,7 @@ class AutoTest:
 
     def __init__(self, eval_data_name):
         self.eval_data = self.get_eval_data(eval_data_name)
+        self.TEAR_DOWN_TARGET_DIR_NAME = "classeval_evaluation"
 
     def get_eval_data(self, eval_data_name):
         eval_data = {}
@@ -305,6 +306,14 @@ class AutoTest:
         return result
 
     def tear_down(self):
+        # now the target directory is "classeval_evaluation"
+        target_dir = os.path.dirname(__file__)
+        if not os.path.exists(target_dir):
+            print(f"Target directory {target_dir} does not exist.")
+            return
+        os.chdir(target_dir)
+        assert os.path.basename(os.getcwd()) == self.TEAR_DOWN_TARGET_DIR_NAME
+
         file_list = os.listdir()
         reserved_files = ["evaluation.py", "path_util.py", "test_pipeline.py", "README.md", "incremental generation.png", "run.sh"]
         for item in file_list:
